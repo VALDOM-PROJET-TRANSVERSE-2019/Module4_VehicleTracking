@@ -25,7 +25,7 @@ class Entity(object):
 
     def _init_tracker(self, windows, frame):
         x, y, w, h = windows
-        tracker = cv2.Tracker_create('KCF')
+        tracker = cv2.TrackerKCF_create()
         tracker.init(frame, (x, y, w, h))
         return tracker
 

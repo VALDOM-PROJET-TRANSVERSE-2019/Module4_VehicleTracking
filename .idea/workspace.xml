@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Module4_VehicleTracking.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/convert.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/model.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/show.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/cnn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/hist.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/weights.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/track.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/entity.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/car.flv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Module4_VehicleTracking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Module4_VehicleTracking.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/track.py" beforeDir="false" afterPath="$PROJECT_DIR$/track.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/entity.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/entity.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +27,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -63,17 +51,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581604647928</updated>
-      <workItem from="1581604650170" duration="165000" />
+      <workItem from="1581604650170" duration="295000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1581604975314</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581604975314</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1581604959291">
+    <state x="326" y="52" key="CommitChangelistDialog2" timestamp="1581604975084">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581604959291" />
+    <state x="326" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1581604975084" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1581605027254">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581605027254" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1581604979184">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581604979184" />
   </component>
 </project>

@@ -73,7 +73,7 @@ def track(video, iou):
     y_size = frame.shape[0]
     x_size = frame.shape[1]
     # Load CNN classification model
-    model = load_model('model//weights.h5')
+    #model = load_model('model//weights.h5')
     # Definition of MOG2 Background Subtraction
     bs = cv2.createBackgroundSubtractorMOG2(detectShadows=True)
     history = 20
@@ -88,7 +88,7 @@ def track(video, iou):
         if not res:
             break
         # Train the MOG2 with first frames frame
-        fg_mask = bs.apply(frame)
+        #fg_mask = bs.apply(frame)
 
         if frames < history:
             frames += 1
@@ -109,10 +109,10 @@ def track(video, iou):
                 image_data = np.array(rimg, dtype='float32')
                 image_data /= 255.
                 roi = np.expand_dims(image_data, axis=0)
-                flag = model.predict(roi)
+                #flag = model.predict(roi)
 
-                if flag[0][0] > 0.5:
-                    e = Entity(counter, (x, y, w, h), frame)
+                #if flag[0][0] > 0.5:
+                e = Entity(counter, (x, y, w, h), frame)
 
                     # Exclude existing targets in the tracking list
                     if track_list:
