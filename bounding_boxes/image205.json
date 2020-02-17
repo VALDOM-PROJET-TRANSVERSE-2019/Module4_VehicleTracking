@@ -1,0 +1,1 @@
+[{"object": "cell_phone", "proba": 61, "left": 34, "bot": 198, "right": 150, "top": 141}, {"object": "car", "proba": 99, "left": 285, "bot": 288, "right": 415, "top": 210}, {"object": "car", "proba": 89, "left": 73, "bot": 284, "right": 188, "top": 223}, {"object": "car", "proba": 84, "left": 298, "bot": 200, "right": 415, "top": 140}]

@@ -1,0 +1,1 @@
+[{"object": "bird", "proba": 70, "left": 4, "bot": 141, "right": 59, "top": 103}, {"object": "car", "proba": 93, "left": 425, "bot": 282, "right": 479, "top": 212}, {"object": "car", "proba": 89, "left": 205, "bot": 287, "right": 318, "top": 223}, {"object": "car", "proba": 69, "left": 205, "bot": 197, "right": 319, "top": 142}]
