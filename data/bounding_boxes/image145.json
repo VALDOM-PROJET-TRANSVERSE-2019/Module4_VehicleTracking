@@ -1,0 +1,6 @@
+[{"object": "truck", "proba": 66, "left": 340, "bot": 285, "right": 450, "top": 214},
+  {"object": "car", "proba": 94, "left": 32, "bot": 81, "right": 129, "top": 26},
+  {"object": "car", "proba": 90, "left": 1, "bot": 285, "right": 111, "top": 217},
+  {"object": "car", "proba": 89, "left": 318, "bot": 78, "right": 433, "top": 22},
+  {"object": "car", "proba": 88, "left": 311, "bot": 209, "right": 418, "top": 149},
+  {"object": "car", "proba": 79, "left": 292, "bot": 29, "right": 375, "top": 0}]

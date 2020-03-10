@@ -10,7 +10,7 @@ def getFrame(sec):
 
 vidcap = cv2.VideoCapture('video/car.flv')
 sec = 0
-frameRate = 0.1  # it will capture image in each 0.5 second
+frameRate = 0.1  # it will capture image in each 0.1 second
 count = 1
 success = getFrame(sec)
 while success:
