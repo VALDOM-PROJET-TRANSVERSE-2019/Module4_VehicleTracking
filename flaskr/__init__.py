@@ -1,7 +1,5 @@
 import os
-
-from flask import Flask
-
+from flask import Flask, request, jsonify
 
 def create_app(test_config=None):
     # create and configure the app
@@ -25,8 +23,33 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    @app.route('/tracking')
+    def getTracking():
+        list_frame_contour = request.args.get('list_frame_contour',None)
+        frame_path = request.args.get('frame_path',None)
 
+        message = ""
+        status="success"
+        if not list_frame_contour:
+            status='error'
+            message += 'missing list_frame_contour ; '
+        if not frame_path:
+            status='error'
+            message += 'missing frame_path ; '
+        
+        
+        #id_list = track(list_frame_contour,frame_path)
+        id_list = "NOT IMPLEMENTED YET"
+
+
+        if status=="error":
+            return jsonify({
+                'status': status, 
+                'message': message
+                }) 
+        else :
+            return jsonify({
+                'status': status, 
+                'id_list': id_list
+                }) 
     return app
