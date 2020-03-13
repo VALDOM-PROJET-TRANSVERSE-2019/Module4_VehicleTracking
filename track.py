@@ -1,28 +1,22 @@
+import hashlib
 import sys
 import copy
 import argparse
-import time
-import sklearn as sk
 import cv2
-import numpy as np
-import json
 
-from object.vehicule import DetectedObject
 from object.vehicules import Vehicule
-
-do: DetectedObject
-
 
 def main(argv):
     parser = argparse.ArgumentParser()
     # Required arguments.
     parser.add_argument(
         "--file",
+        default= "car.flv",
         help="Input video file.", )
     # Optional arguments.
     parser.add_argument(
         "--iou",
-        default=0.2,
+        default=0.05,
         help="threshold for tracking", )
     args = parser.parse_args()
     track('data/video/' + args.file, args.iou)
@@ -49,87 +43,83 @@ def overlap(box1, box2):
         ratio = Area / (Area1 + Area2 - Area)
         return ratio
 
-
-def get_ressemblance(od, tv):
-    # feature vector of do:
-    od_features = [od.center, *od.mean_colors]
-
-    # feature vector of tv:
-    if not tv.velocity:
-        tv_features = [tv.center, *tv.mean_colors]
-    else:
-        tv_features = [tv.futur_center, *tv.mean_colors, tv.velocity]
-        od_features.append(np.array(od.center - tv.center))
-
-    return sk.metrics.mean_squared_error(tv_features, od_features)
-
-
 def track(video, iou):
-    # todo get frames with module 1
     camera = cv2.VideoCapture(video)
     res, frame = camera.read()
     y_size = frame.shape[0]
     x_size = frame.shape[1]
+    bs = cv2.createBackgroundSubtractorMOG2(detectShadows=True)
 
+    history = 10
     frames = 0
     counter = 0
+
     tracked_vehicules = []
+    unique = []
     cv2.namedWindow("detection", cv2.WINDOW_NORMAL)
 
     while True:
-        frames += 1
-        # take the next image from the database
-        frame = cv2.imread("data/image/image" + str(frames) + ".jpg")
-        # get the associated contour
-        objects_detected = []
-        with open("data/bounding_boxes/image" + str(frames) + ".json") as f:
-            data = json.load(f)
-            # For each detected object, add the newVehicules
-            for elem in data:
-                # if elem["proba"] > 50 :
-                if elem["object"] == "truck" or elem["object"] == "car":
-                    x = elem["left"]
-                    y = elem["top"]
-                    w = elem["right"] - elem["left"]
-                    h = elem["bot"] - elem["top"]
-                    objects_detected.append(DetectedObject((x, y, w, h), frame))
-
-        # For each vehicules of the new frame
-        for od in objects_detected:
-            ressemblances = []
-            for tv in tracked_vehicules:
-                count = 0
-                ressemblances.append(get_ressemblance(od,tv))
-            if max(ressemblances) > 0.9
-                counter += 1
-            else:
-                trackedVehicules.append(vehicule)
-                counter += 1
+        res, frame = camera.read()
+        if not res:
+            break
+        fg_mask = bs.apply(frame)
+        if frames < history:
+            frames += 1
+            continue
+        th = cv2.threshold(fg_mask.copy(), 244, 255, cv2.THRESH_BINARY)[1]
+        th = cv2.erode(th, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)), iterations=2)
+        dilated = cv2.dilate(th, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)), iterations=2)
+        contours, hier = cv2.findContours(dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        for c in contours:
+            print(cv2.contourArea(c))
+            x, y, w, h = cv2.boundingRect(c)
+            if cv2.contourArea(c) > 2000:
+                if tracked_vehicules:
+                    count = 0
+                    num = len(tracked_vehicules)
+                    for tv in tracked_vehicules:
+                        if overlap((x, y, w, h), tv.bounding_box) < iou:
+                            count += 1
+                    if count == num:
+                        counter += 1
+                        tracked_vehicules.append(
+                            Vehicule(hashlib.blake2s(str(c).encode(), key=b'AP', digest_size=3).hexdigest(),
+                                     (x, y, w, h), frame))
+                else:
+                    counter += 1
+                    tracked_vehicules.append(
+                        Vehicule(hashlib.blake2s(str(c).encode(), key=b'AP', digest_size=3).hexdigest(), (x, y, w, h),
+                                 frame))
 
         # Check and update goals
-        if trackedVehicules:
-            tlist = copy.copy(trackedVehicules)
-            for e in tlist:
-                x, y = e.center
-                # todo set proper outofbound size
-                if 0.05 * x_size < x < 0.95 * x_size and 0.05 * y_size < y < 0.95 * y_size:
-                    e.update(frame)
-                elif e.number_of_frame < 20:
-                    e.update(frame)
+        if tracked_vehicules:
+            tlist = copy.copy(tracked_vehicules)
+            for tv in tlist:
+                xc, yc = tv.center
+                if x_size*0.20 < xc+tv.w < x_size*0.99 and 10 < yc < y_size*0.9:
+                    tv.update(frame)
                 else:
-                    trackedVehicules.remove(e)
+                    tracked_vehicules.remove(tv)
+                    if tv.updated:
+                        unique.append(tv.get_id())
 
-        time.sleep(0.2)
+
         # Frame overlay
-        cv2.putText(frame, "frame: " + str(frames), (0, 0 + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1,
+        cv2.rectangle(frame, (x_size - 40, y_size - 10), (40, 10), (0, 255, 255), 1)
+        cv2.putText(frame, "Frame #: " + str(frames), (5, 5 + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1,
                     cv2.LINE_AA)
-        cv2.putText(frame, "Counter: " + str(counter), (0, 0 + 40), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1,
+        cv2.putText(frame, "Unique : " + str(len(unique)), (5, 5 + 40), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1,
                     cv2.LINE_AA)
-        for i, e in enumerate(trackedVehicules):
-            cv2.putText(frame, "tracked: " + str(e.center), (0, 0 + 60 + i * 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
+        cv2.putText(frame, "Tracked: ", (5, 5 + 60), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
+                    (0, 255, 0), 1,
+                    cv2.LINE_AA)
+
+        for i, e in enumerate(tracked_vehicules):
+            cv2.putText(frame, str(e.get_id()), (7, 7 + 75 + i * 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                         (0, 255, 0), 1,
                         cv2.LINE_AA)
 
+        frames += 1
         cv2.imshow("detection", frame)
 
         if cv2.waitKey(110) & 0xff == 27:

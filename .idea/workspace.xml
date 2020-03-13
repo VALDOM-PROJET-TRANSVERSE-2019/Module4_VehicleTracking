@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SHOW_STRUCTURE" value="true" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="v1.04&#10;&#10;few improvements">
-      <change afterPath="$PROJECT_DIR$/object/vehicule.py" afterDir="false" />
+    <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/Module4_VehicleTracking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Module4_VehicleTracking.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getframe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/object/vehicule.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/object/vehicules.py" beforeDir="false" afterPath="$PROJECT_DIR$/object/vehicules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/track.py" beforeDir="false" afterPath="$PROJECT_DIR$/track.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +36,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="cf359191-cfe0-4bc8-b0e0-fe6942296663" />
+  <component name="JupyterTrust" id="b3917fc6-2a03-4196-a9ee-8a12a2a6244d" />
   <component name="ProjectId" id="1XkyzEjA4hcbKzffOp81q3SsOVJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -45,6 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -52,6 +57,61 @@
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.track">
+    <configuration name="track" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Module4_VehicleTracking" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/track.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="[Local] track.track" type="aws.lambda" factoryName="Local" temporary="true" nameIsGenerated="true">
+      <option name="credentialProviderId" />
+      <option name="regionId" value="us-east-1" />
+      <option name="debugHost" value="localhost" />
+      <option name="environmentVariables">
+        <map />
+      </option>
+      <option name="handler" value="track.track" />
+      <option name="logicalFunctionName" />
+      <option name="memorySize" value="128" />
+      <option name="runtime" value="python3.6" />
+      <option name="templateFile" />
+      <option name="timeout" value="300" />
+      <option name="useTemplate" value="false" />
+      <option name="input" />
+      <option name="inputIsFile" value="false" />
+      <sam>
+        <option name="additionalBuildArgs" />
+        <option name="additionalLocalArgs" />
+        <option name="buildInContainer" value="false" />
+        <option name="dockerNetwork" />
+        <option name="skipImagePull" value="false" />
+      </sam>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.track" />
+        <item itemvalue="AWS Lambda.[Local] track.track" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -80,6 +140,7 @@
       <workItem from="1583831075097" duration="1673000" />
       <workItem from="1583945044138" duration="284000" />
       <workItem from="1584020936090" duration="11196000" />
+      <workItem from="1584088925165" duration="6501000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1581604975314</created>
@@ -101,6 +162,42 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="v1.01" />
@@ -108,55 +205,116 @@
     <option name="LAST_COMMIT_MESSAGE" value="v1.03&#10;&#10;tracking based on images and bb from yolo." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="579" y="80" width="754" height="919" key="#[Local]_track.track" timestamp="1584091473255">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="579" y="80" width="754" height="919" key="#[Local]_track.track/0.28.1920.1024@0.28.1920.1024" timestamp="1584091473255" />
     <state x="477" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581605409275">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="477" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1581605409275" />
+    <state x="693" y="289" width="526" height="501" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584091297253">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="693" y="289" width="526" height="501" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1584091297253" />
+    <state x="696" y="396" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584091318272">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state x="696" y="396" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.28.1920.1024@0.28.1920.1024" timestamp="1584091318272" />
     <state x="326" y="52" width="1320" height="711" key="CommitChangelistDialog2" timestamp="1584021640093">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="326" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584021640093" />
     <state x="32" y="28" width="1320" height="711" key="CommitChangelistDialog2/0.28.1360.712@0.28.1360.712" timestamp="1583832747750" />
-    <state width="1398" height="237" key="GridCell.Tab.0.bottom" timestamp="1584020971859">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1874" height="428" key="GridCell.Tab.0.bottom" timestamp="1584095019690">
+      <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.0.1440.900/-404.-1200.1920.1200@0.0.1440.900" timestamp="1583945312201" />
     <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584020971859" />
     <state width="1314" height="115" key="GridCell.Tab.0.bottom/0.28.1360.712@0.28.1360.712" timestamp="1583831113873" />
-    <state width="1398" height="237" key="GridCell.Tab.0.center" timestamp="1584020971857">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1874" height="428" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1584095019690" />
+    <state width="1874" height="428" key="GridCell.Tab.0.center" timestamp="1584095019690">
+      <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state width="1398" height="237" key="GridCell.Tab.0.center/0.0.1440.900/-404.-1200.1920.1200@0.0.1440.900" timestamp="1583945312187" />
     <state width="1398" height="237" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584020971857" />
     <state width="1314" height="115" key="GridCell.Tab.0.center/0.28.1360.712@0.28.1360.712" timestamp="1583831113873" />
-    <state width="1398" height="237" key="GridCell.Tab.0.left" timestamp="1584020971856">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1874" height="428" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1584095019690" />
+    <state width="1874" height="428" key="GridCell.Tab.0.left" timestamp="1584095019690">
+      <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state width="1398" height="237" key="GridCell.Tab.0.left/0.0.1440.900/-404.-1200.1920.1200@0.0.1440.900" timestamp="1583945312179" />
     <state width="1398" height="237" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584020971856" />
     <state width="1314" height="115" key="GridCell.Tab.0.left/0.28.1360.712@0.28.1360.712" timestamp="1583831113873" />
-    <state width="1398" height="237" key="GridCell.Tab.0.right" timestamp="1584020971858">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1874" height="428" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1584095019690" />
+    <state width="1874" height="428" key="GridCell.Tab.0.right" timestamp="1584095019690">
+      <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state width="1398" height="237" key="GridCell.Tab.0.right/0.0.1440.900/-404.-1200.1920.1200@0.0.1440.900" timestamp="1583945312194" />
     <state width="1398" height="237" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584020971858" />
     <state width="1314" height="115" key="GridCell.Tab.0.right/0.28.1360.712@0.28.1360.712" timestamp="1583831113873" />
-    <state x="229" y="89" key="SettingsEditor" timestamp="1583841000805">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1874" height="428" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1584095019690" />
+    <state width="1874" height="428" key="GridCell.Tab.1.bottom" timestamp="1584095019652">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state width="1874" height="428" key="GridCell.Tab.1.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1584095019652" />
+    <state width="1874" height="428" key="GridCell.Tab.1.center" timestamp="1584095019652">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state width="1874" height="428" key="GridCell.Tab.1.center/0.28.1920.1024@0.28.1920.1024" timestamp="1584095019652" />
+    <state width="1874" height="428" key="GridCell.Tab.1.left" timestamp="1584095019652">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state width="1874" height="428" key="GridCell.Tab.1.left/0.28.1920.1024@0.28.1920.1024" timestamp="1584095019652" />
+    <state width="1874" height="428" key="GridCell.Tab.1.right" timestamp="1584095019652">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state width="1874" height="428" key="GridCell.Tab.1.right/0.28.1920.1024@0.28.1920.1024" timestamp="1584095019652" />
+    <state x="305" y="129" key="SettingsEditor" timestamp="1584086620165">
+      <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583841000805" />
     <state x="216" y="28" key="SettingsEditor/0.28.1360.712@0.28.1360.712" timestamp="1583826466894" />
+    <state x="305" y="129" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1584086620165" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1584094350004">
+      <screen x="0" y="28" width="1920" height="1024" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.28.1920.1024@0.28.1920.1024" timestamp="1584094350004" />
     <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1581605112036">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581605112036" />
-    <state x="336" y="212" key="com.intellij.ide.util.TipDialog" timestamp="1583831102405">
-      <screen x="0" y="28" width="1360" height="712" />
+    <state x="474" y="293" key="com.intellij.ide.util.TipDialog" timestamp="1584088925358">
+      <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="336" y="212" key="com.intellij.ide.util.TipDialog/0.28.1360.712@0.28.1360.712" timestamp="1583831102405" />
+    <state x="474" y="293" key="com.intellij.ide.util.TipDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1584088925358" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1584033239883">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1584033239883" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="tracked_vehicules" />
+        <watch expression="unique" />
+        <watch expression="frames" />
+        <watch expression="tv" />
+        <watch expression="test" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Module4_VehicleTracking$track.coverage" NAME="track Coverage Results" MODIFIED="1584095019636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
