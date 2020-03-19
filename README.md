@@ -11,7 +11,6 @@ Ce module permet de faire le lien entre les mêmes véhicules présents sur diff
 2. Fonctionnement du module
 
 
-
 3. API du module
 
 
