@@ -228,12 +228,13 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="696" y="396" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.28.1920.1024@0.28.1920.1024" timestamp="1584091318272" />
-    <state x="160" y="87" width="1320" height="711" key="CommitChangelistDialog2" timestamp="1584095453325">
-      <screen x="0" y="28" width="1920" height="1024" />
+    <state x="2080" y="62" width="1320" height="711" key="CommitChangelistDialog2" timestamp="1584625028820">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="326" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584021640093" />
     <state x="32" y="28" width="1320" height="711" key="CommitChangelistDialog2/0.28.1360.712@0.28.1360.712" timestamp="1583832747750" />
     <state x="160" y="87" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095453325" />
+    <state x="2080" y="62" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584625028820" />
     <state width="1874" height="428" key="GridCell.Tab.0.bottom" timestamp="1584095512920">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
@@ -288,11 +289,12 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.28.1920.1024@0.28.1920.1024" timestamp="1584094350004" />
-    <state x="427" y="244" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1584095460284">
-      <screen x="0" y="28" width="1920" height="1024" />
+    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1584625031683">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581605112036" />
     <state x="427" y="244" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095460284" />
+    <state x="2347" y="228" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584625031683" />
     <state x="2394" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584624912443">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
