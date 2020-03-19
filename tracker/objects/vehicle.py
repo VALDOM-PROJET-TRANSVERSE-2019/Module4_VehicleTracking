@@ -3,7 +3,7 @@
 Description :
 Class for the tracked vehicle.
 """
-import cv2
+#import cv2
 import numpy as np
 
 
@@ -11,23 +11,21 @@ class Vehicle:
     """
     A tracked vehicle, defined by an unique id and from a DetectedObject
     """
+
     def __init__(self, detected_object, id):
         self.frame_size = detected_object.frame_size
         self.x = detected_object.x
         self.y = detected_object.y
         self.w = detected_object.w
         self.h = detected_object.h
-        self.bounding_box = self.x, self.y, self.w, self.h
 
         self.id = id
         self.visible = True
         self.center = detected_object.center
         self.speed = [0, 0]
         self.update_prob_position()
-        self.updated = False
         self.mean_colors = detected_object.mean_colors
         self.counter = 0
-
 
     def get_mean_color(self, frame):
         """
@@ -59,19 +57,19 @@ class Vehicle:
         g = self.mean_colors[1] / 255
         b = self.mean_colors[2] / 255
         return np.array([x, y, w, h, r, g, b])
-
+    """
     def draw(self, frame):
-        """
+        
         Draw rectangle and text on the image
         :param frame: array, frame
         :return:
-        """
+        
         cv2.rectangle(frame, (self.x, self.y), (self.x + self.w, self.y + self.h), (0, 255, 0), 1)
         cv2.putText(frame, "Vehicle", (self.x, self.y - 5),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
         cv2.putText(frame, str(self.id), (self.x, self.y - 20),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
-
+        """
     def update_counter(self, visible):
         """
         Update the vehicle counter

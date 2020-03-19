@@ -19,9 +19,6 @@ class DetectedObject:
         self.bounding_box = self.x, self.y, self.w, self.h
 
         self.center = [self.x + self.w / 2, self.y + self.h / 2]
-        self.direction = None
-        self.updated = False
-
         self.mean_colors = self.set_mean_color(frame)
 
     def set_mean_color(self, frame):

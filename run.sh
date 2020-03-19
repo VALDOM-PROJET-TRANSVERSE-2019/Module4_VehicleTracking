@@ -1,3 +1,2 @@
-export FLASK_APP=flaskr
-export FLASK_enc_Comute
-flask run
+docker build -t tracker .
+docker run -it -p 5000:5000 --name track tracker

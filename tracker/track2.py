@@ -7,7 +7,9 @@ import json
 import re
 from os import listdir
 from os.path import isfile, join
-import cv2
+
+import numpy as np
+from PIL import Image
 from objects.vehicle import Vehicle
 from objects.detectedobject import DetectedObject
 
@@ -95,8 +97,8 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
     output_data = {}
 
     for image in images:
-        img = cv2.imread(images_folder + image)
-        img_array.append(img)
+        img = Image.open(images_folder + image)
+        img_array.append(np.asarray(img))
     for bb in bounding_boxes:
         with open(bb_folder + bb) as f:
             data = json.load(f)
@@ -150,10 +152,10 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
                 detected_vehicles.append(Vehicle(do, vehicle_count))
                 vehicle_count += 1
 
-        print("Frame {}".format(i))
-        for dv in detected_vehicles:
-            if dv.visible:
-                dv.draw(img)
+        #print("Frame {}".format(i))
+        #for dv in detected_vehicles:
+         #   if dv.visible:
+         #       dv.draw(img)
 
         output_data["frame " + str(i)] = [dv.id for dv in detected_vehicles]
 
