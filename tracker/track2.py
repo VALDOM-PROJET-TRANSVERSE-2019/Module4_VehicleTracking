@@ -10,8 +10,9 @@ from os.path import isfile, join
 
 import numpy as np
 from PIL import Image
-from objects.vehicle import Vehicle
-from objects.detectedobject import DetectedObject
+
+from tracker import DetectedObject
+from tracker import Vehicle
 
 NUMBERS = re.compile(r'(\d+)')
 
@@ -158,7 +159,7 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
          #       dv.draw(img)
 
         output_data["frame " + str(i)] = [dv.id for dv in detected_vehicles]
-
+        print(output_data)
     return output_data
 
     #for i in range(len(img_array)):

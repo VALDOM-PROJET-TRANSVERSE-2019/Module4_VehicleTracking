@@ -1,8 +1,14 @@
+"""
+Routes for Flask app
+"""
+
 from flask import Flask, request, jsonify
-import track2
 from flask_restplus import Api, Resource
 
+from tracker import track2
+
 app = Flask(__name__)
+app.config.from_object('config')
 api = Api(app=app, version='1.0', title='Tracker API')
 ns_track = api.namespace('Track', description="Tracker operations")
 
@@ -33,6 +39,3 @@ class Tracker(Resource):
         else:
             return output
 
-
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")

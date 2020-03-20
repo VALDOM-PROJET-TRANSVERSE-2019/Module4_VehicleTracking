@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_detectedobject.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_numerical_sort.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_overlap.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracker/objects/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracker/view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_container.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/objects/detectedobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/detectedobject.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/objects/vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/vehicle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracker/__main__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracker/objects/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tracker/track2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/track2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -186,7 +183,8 @@
       <workItem from="1584020936090" duration="11196000" />
       <workItem from="1584088925165" duration="6501000" />
       <workItem from="1584624908479" duration="637000" />
-      <workItem from="1584628229813" duration="13021000" />
+      <workItem from="1584628229813" duration="13262000" />
+      <workItem from="1584688158533" duration="2864000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1581604975314</created>
@@ -216,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584625083893</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="v2.2 &#10;Add unit test&#10;Add requirements.txt&#10;Add Dockerfile">
+      <created>1584643688375</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584643688375</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +275,8 @@
     <MESSAGE value="v1.01" />
     <MESSAGE value="v1.03&#10;&#10;tracking based on images and bb from yolo." />
     <MESSAGE value="v2.2 &#10;PEP8 cleaning &#10;API REST implementation&#10;Project Structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2.2 &#10;PEP8 cleaning &#10;API REST implementation&#10;Project Structure" />
+    <MESSAGE value="v2.2 &#10;Add unit test&#10;Add requirements.txt&#10;Add Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2.2 &#10;Add unit test&#10;Add requirements.txt&#10;Add Dockerfile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2554" y="87" width="644" height="906" key="#Dockerfile" timestamp="1584639367052">
@@ -293,13 +299,13 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="696" y="396" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.28.1920.1024@0.28.1920.1024" timestamp="1584091318272" />
-    <state x="2080" y="62" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584625083841">
+    <state x="2080" y="62" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584643688288">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="326" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584021640093" />
     <state x="32" y="28" width="1320" height="711" key="CommitChangelistDialog2/0.28.1360.712@0.28.1360.712" timestamp="1583832747750" />
     <state x="160" y="87" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095453325" />
-    <state x="2080" y="62" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584625083841" />
+    <state x="2080" y="62" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584643688288" />
     <state width="1874" height="428" key="GridCell.Tab.0.bottom" timestamp="1584095512920">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
@@ -355,18 +361,18 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.28.1920.1024@0.28.1920.1024" timestamp="1584094350004" />
-    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1584625085685">
+    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1584643691315">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581605112036" />
     <state x="427" y="244" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095460284" />
-    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584625085685" />
-    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584628229853">
+    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584643691315" />
+    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584688160815">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="336" y="212" key="com.intellij.ide.util.TipDialog/0.28.1360.712@0.28.1360.712" timestamp="1583831102405" />
     <state x="474" y="293" key="com.intellij.ide.util.TipDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1584088925358" />
-    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584628229853" />
+    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584688160815" />
     <state x="679" y="277" width="554" height="525" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1584095518315">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
