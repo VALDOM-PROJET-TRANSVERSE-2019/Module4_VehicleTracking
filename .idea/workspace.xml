@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracker/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_container.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/__main__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/objects/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracker/objects/vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/vehicle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tracker/track2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/track2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracker/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,7 @@
         <option value="Jupyter Notebook" />
         <option value="Python Unit Test" />
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -57,19 +56,70 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tracker/static" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="OPEN_URL_DIALOG">
+      <recent name="https://github.com/greyli/flask-examples.git" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tracker/static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tracker/objects" />
+      <recent name="$PROJECT_DIR$/tracker/static" />
+      <recent name="$PROJECT_DIR$/tracker/templates" />
       <recent name="$PROJECT_DIR$/tracker" />
-      <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/tracker/template" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.Dockerfile">
+  <component name="RunManager" selected="Python.a (1)">
+    <configuration name="a (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Module4_VehicleTracking" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tracker" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tracker/a.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="a" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Module4_VehicleTracking" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/image" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/image/a.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="track" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Module4_VehicleTracking" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -92,29 +142,26 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="[Local] track.track" type="aws.lambda" factoryName="Local" temporary="true" nameIsGenerated="true">
-      <option name="credentialProviderId" />
-      <option name="regionId" value="us-east-1" />
-      <option name="debugHost" value="localhost" />
-      <option name="environmentVariables">
-        <map />
-      </option>
-      <option name="handler" value="track.track" />
-      <option name="logicalFunctionName" />
-      <option name="memorySize" value="128" />
-      <option name="runtime" value="python3.6" />
-      <option name="templateFile" />
-      <option name="timeout" value="300" />
-      <option name="useTemplate" value="false" />
-      <option name="input" />
-      <option name="inputIsFile" value="false" />
-      <sam>
-        <option name="additionalBuildArgs" />
-        <option name="additionalLocalArgs" />
-        <option name="buildInContainer" value="false" />
-        <option name="dockerNetwork" />
-        <option name="skipImagePull" value="false" />
-      </sam>
+    <configuration name="track2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Module4_VehicleTracking" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tracker" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tracker/track2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
@@ -133,9 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.a (1)" />
+        <item itemvalue="Python.track2" />
+        <item itemvalue="Python.a" />
         <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Python.track" />
-        <item itemvalue="AWS Lambda.[Local] track.track" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +233,11 @@
       <workItem from="1584088925165" duration="6501000" />
       <workItem from="1584624908479" duration="637000" />
       <workItem from="1584628229813" duration="13262000" />
-      <workItem from="1584688158533" duration="2864000" />
+      <workItem from="1584688158533" duration="10230000" />
+      <workItem from="1584698722713" duration="2371000" />
+      <workItem from="1584701103039" duration="2312000" />
+      <workItem from="1584703423586" duration="7000" />
+      <workItem from="1584703635020" duration="2171000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1581604975314</created>
@@ -221,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584643688375</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ADD config.py&#10;ADD view.py (replace __main__.py)&#10;ADD run.py (to run the app)">
+      <created>1584691293161</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584691293161</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,12 +331,16 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="v1.01" />
     <MESSAGE value="v1.03&#10;&#10;tracking based on images and bb from yolo." />
     <MESSAGE value="v2.2 &#10;PEP8 cleaning &#10;API REST implementation&#10;Project Structure" />
     <MESSAGE value="v2.2 &#10;Add unit test&#10;Add requirements.txt&#10;Add Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2.2 &#10;Add unit test&#10;Add requirements.txt&#10;Add Dockerfile" />
+    <MESSAGE value="ADD config.py&#10;ADD view.py (replace __main__.py)&#10;ADD run.py (to run the app)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD config.py&#10;ADD view.py (replace __main__.py)&#10;ADD run.py (to run the app)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2554" y="87" width="644" height="906" key="#Dockerfile" timestamp="1584639367052">
@@ -299,41 +363,49 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="696" y="396" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.28.1920.1024@0.28.1920.1024" timestamp="1584091318272" />
-    <state x="2080" y="62" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584643688288">
+    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584705997008">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="326" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584021640093" />
     <state x="32" y="28" width="1320" height="711" key="CommitChangelistDialog2/0.28.1360.712@0.28.1360.712" timestamp="1583832747750" />
     <state x="160" y="87" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095453325" />
-    <state x="2080" y="62" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584643688288" />
-    <state width="1874" height="428" key="GridCell.Tab.0.bottom" timestamp="1584095512920">
-      <screen x="0" y="28" width="1920" height="1024" />
+    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584705997008" />
+    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog" timestamp="1584705959846">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584705959846" />
+    <state width="1874" height="269" key="GridCell.Tab.0.bottom" timestamp="1584698392593">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.0.1440.900/-404.-1200.1920.1200@0.0.1440.900" timestamp="1583945312201" />
     <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584020971859" />
     <state width="1314" height="115" key="GridCell.Tab.0.bottom/0.28.1360.712@0.28.1360.712" timestamp="1583831113873" />
     <state width="1874" height="428" key="GridCell.Tab.0.bottom/0.28.1920.1024@0.28.1920.1024" timestamp="1584095512920" />
-    <state width="1874" height="428" key="GridCell.Tab.0.center" timestamp="1584095512920">
-      <screen x="0" y="28" width="1920" height="1024" />
+    <state width="1874" height="269" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584698392593" />
+    <state width="1874" height="269" key="GridCell.Tab.0.center" timestamp="1584698392593">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1398" height="237" key="GridCell.Tab.0.center/0.0.1440.900/-404.-1200.1920.1200@0.0.1440.900" timestamp="1583945312187" />
     <state width="1398" height="237" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584020971857" />
     <state width="1314" height="115" key="GridCell.Tab.0.center/0.28.1360.712@0.28.1360.712" timestamp="1583831113873" />
     <state width="1874" height="428" key="GridCell.Tab.0.center/0.28.1920.1024@0.28.1920.1024" timestamp="1584095512920" />
-    <state width="1874" height="428" key="GridCell.Tab.0.left" timestamp="1584095512919">
-      <screen x="0" y="28" width="1920" height="1024" />
+    <state width="1874" height="269" key="GridCell.Tab.0.center/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584698392593" />
+    <state width="1874" height="269" key="GridCell.Tab.0.left" timestamp="1584698392593">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1398" height="237" key="GridCell.Tab.0.left/0.0.1440.900/-404.-1200.1920.1200@0.0.1440.900" timestamp="1583945312179" />
     <state width="1398" height="237" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584020971856" />
     <state width="1314" height="115" key="GridCell.Tab.0.left/0.28.1360.712@0.28.1360.712" timestamp="1583831113873" />
     <state width="1874" height="428" key="GridCell.Tab.0.left/0.28.1920.1024@0.28.1920.1024" timestamp="1584095512919" />
-    <state width="1874" height="428" key="GridCell.Tab.0.right" timestamp="1584095512920">
-      <screen x="0" y="28" width="1920" height="1024" />
+    <state width="1874" height="269" key="GridCell.Tab.0.left/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584698392593" />
+    <state width="1874" height="269" key="GridCell.Tab.0.right" timestamp="1584698392593">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1398" height="237" key="GridCell.Tab.0.right/0.0.1440.900/-404.-1200.1920.1200@0.0.1440.900" timestamp="1583945312194" />
     <state width="1398" height="237" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584020971858" />
     <state width="1314" height="115" key="GridCell.Tab.0.right/0.28.1360.712@0.28.1360.712" timestamp="1583831113873" />
     <state width="1874" height="428" key="GridCell.Tab.0.right/0.28.1920.1024@0.28.1920.1024" timestamp="1584095512920" />
+    <state width="1874" height="269" key="GridCell.Tab.0.right/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584698392593" />
     <state width="1874" height="428" key="GridCell.Tab.1.bottom" timestamp="1584095512921">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
@@ -361,18 +433,18 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.28.1920.1024@0.28.1920.1024" timestamp="1584094350004" />
-    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1584643691315">
+    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1584691303705">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581605112036" />
     <state x="427" y="244" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095460284" />
-    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584643691315" />
-    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584688160815">
+    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584691303705" />
+    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584703425140">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="336" y="212" key="com.intellij.ide.util.TipDialog/0.28.1360.712@0.28.1360.712" timestamp="1583831102405" />
     <state x="474" y="293" key="com.intellij.ide.util.TipDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1584088925358" />
-    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584688160815" />
+    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584703425140" />
     <state x="679" y="277" width="554" height="525" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1584095518315">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
@@ -388,13 +460,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tracker/objects/vehicle.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -414,6 +479,9 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Module4_VehicleTracking$a.coverage" NAME="a Coverage Results" MODIFIED="1584691941848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/image" />
+    <SUITE FILE_PATH="coverage/Module4_VehicleTracking$track2.coverage" NAME="track2 Coverage Results" MODIFIED="1584692357657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tracker" />
+    <SUITE FILE_PATH="coverage/Module4_VehicleTracking$a__1_.coverage" NAME="a (1) Coverage Results" MODIFIED="1584695468088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tracker" />
     <SUITE FILE_PATH="coverage/Module4_VehicleTracking$track.coverage" NAME="track Coverage Results" MODIFIED="1584095019636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

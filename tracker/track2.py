@@ -1,18 +1,19 @@
 """
 This module is the core tracking system
 """
-import sys
 import argparse
 import json
 import re
+import sys
 from os import listdir
 from os.path import isfile, join
 
+import imageio
 import numpy as np
+from pygifsicle import optimize
 from PIL import Image
-
-from tracker import DetectedObject
-from tracker import Vehicle
+from tracker.objects import DetectedObject
+from tracker.objects import Vehicle
 
 NUMBERS = re.compile(r'(\d+)')
 
@@ -93,12 +94,14 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
     bounding_boxes = sorted([f for f in listdir(bb_folder) if isfile(join(bb_folder, f))], key=numerical_sort)
 
     img_array = []
+    img_pil = []
     bb_array = []
     vehicle_count = 0
     output_data = {}
 
     for image in images:
         img = Image.open(images_folder + image)
+        img_pil.append(img)
         img_array.append(np.asarray(img))
     for bb in bounding_boxes:
         with open(bb_folder + bb) as f:
@@ -106,9 +109,7 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
         bb_array.append(data)
 
     detected_vehicles = []
-    for i in range(len(img_array)):
-        img = img_array[i]
-        bbs = bb_array[i]
+    for i, (img, pil, bbs) in enumerate(zip(img_array, img_pil, bb_array)):
         detected_objects = []
 
         # Reset visibility
@@ -146,25 +147,23 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
                     found = True
                     vehicle_index = potential_vehicles_indexes[shortest_distance_index]
                     detected_vehicles[vehicle_index].update_vehicle(do)
-
                     potential_vehicles_indexes.remove(potential_vehicles_indexes[shortest_distance_index])
 
             if not found:
                 detected_vehicles.append(Vehicle(do, vehicle_count))
                 vehicle_count += 1
 
-        #print("Frame {}".format(i))
-        #for dv in detected_vehicles:
-         #   if dv.visible:
-         #       dv.draw(img)
+        print("Frame {}".format(i))
+        for dv in detected_vehicles:
+            if dv.visible:
+                dv.draw(pil)
 
         output_data["frame " + str(i)] = [dv.id for dv in detected_vehicles]
-        print(output_data)
+
     return output_data
 
-    #for i in range(len(img_array)):
-    #    cv2.imshow("detection", img_array[i])
-     #   cv2.waitKey(200)
+    imageio.mimsave('output.gif', img_pil)
+    optimize("output.gif")
 
 
 if __name__ == '__main__':

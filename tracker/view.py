@@ -1,7 +1,6 @@
 """
 Routes for Flask app
 """
-
 from flask import Flask, request, jsonify
 from flask_restplus import Api, Resource
 
@@ -11,6 +10,7 @@ app = Flask(__name__)
 app.config.from_object('config')
 api = Api(app=app, version='1.0', title='Tracker API')
 ns_track = api.namespace('Track', description="Tracker operations")
+app.config['CACHE_TYPE'] = 'simple'
 
 
 @ns_track.route('/')

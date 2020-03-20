@@ -5,7 +5,7 @@ Configuration file
 DATA_BASE_PATH = ""
 
 """ FLASK CONFIG """
-FLASK_PORT = "4000"
+FLASK_PORT = "5000"
 FLASK_HOST_ADDRESS = "0.0.0.0"
 ENV = 'development'
 TESTING = True

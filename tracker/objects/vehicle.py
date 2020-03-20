@@ -3,8 +3,9 @@
 Description :
 Class for the tracked vehicle.
 """
-#import cv2
+
 import numpy as np
+from PIL import ImageDraw, ImageFont
 
 
 class Vehicle:
@@ -57,19 +58,20 @@ class Vehicle:
         g = self.mean_colors[1] / 255
         b = self.mean_colors[2] / 255
         return np.array([x, y, w, h, r, g, b])
-    """
+
     def draw(self, frame):
-        
-        Draw rectangle and text on the image
+        """
+         Draw rectangle and text on the image
         :param frame: array, frame
         :return:
-        
-        cv2.rectangle(frame, (self.x, self.y), (self.x + self.w, self.y + self.h), (0, 255, 0), 1)
-        cv2.putText(frame, "Vehicle", (self.x, self.y - 5),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
-        cv2.putText(frame, str(self.id), (self.x, self.y - 20),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
         """
+
+        draw = ImageDraw.Draw(frame)
+        font = ImageFont.truetype("FreeMono.ttf", 16)
+        draw.rectangle([(self.x, self.y), (self.x + self.w, self.y + self.h)], outline=(0, 255, 0), width=2)
+        draw.text([self.x, self.y - 20], "Vehicle", (0, 255, 0), font=font)
+        draw.text([self.x, self.y - 40], str(self.id), (0, 255, 0), font=font)
+
     def update_counter(self, visible):
         """
         Update the vehicle counter
