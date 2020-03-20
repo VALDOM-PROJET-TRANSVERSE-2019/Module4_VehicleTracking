@@ -64,11 +64,11 @@ class Vehicle:
         :return:
         """
         draw = ImageDraw.Draw(frame)
-        font = ImageFont.truetype("FreeMono.ttf", 16)
+        #font = ImageFont.truetype("FreeMono.ttf", 16)
         draw.rectangle([(self.__x, self.__y), (self.__x + self.__w, self.__y + self.__h)],
                        outline=(0, 255, 0), width=2)
-        draw.text([self.__x, self.__y - 20], "Vehicle", (0, 255, 0), font=font)
-        draw.text([self.__x, self.__y - 40], str(self.__id), (0, 255, 0), font=font)
+        draw.text([self.__x, self.__y - 20], "Vehicle", (0, 255, 0))
+        draw.text([self.__x, self.__y - 40], str(self.__id), (0, 255, 0))
 
     def update_counter(self, visible):
         """

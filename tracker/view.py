@@ -19,10 +19,10 @@ class Tracker(Resource):
     """
     @TRACK.doc(params={'list_frame_contour': 'A path', "frame_path": 'A path'})
     def post(self):
-        '''
+        """
         POST method, request the paths of images and bounding_boxes
         :return: json file
-        '''
+        """
         parser = reqparse.RequestParser()
         parser.add_argument('list_frame_contour', type=str,
                             required=True, help='Path to bounding boxes')
