@@ -10,10 +10,39 @@ Ce module permet de faire le lien entre les mêmes véhicules présents sur diff
 
 2. Fonctionnement du module
 
+Le module va chercher aux chemins désignés:
+* un ensemble d'images.
+* les détections de véhicules associées à ces images.
+
+//todo explication tracker
 
 3. API du module
+
+Une interface de type REST (GET), qui prends en argument les chemins vers les images et les véhicules détectés.
+Renvoi en sortie, un fichier json, qui contient image par image, les identifiants uniques des véhicules détectés:
+```json
+{
+  "frame 0": [0,1],
+  "frame 1": [0,1],
+  "frame 2": [1],
+  "frame 3": [2],
+  "frame 4": [2,3],
+  "frame 5": []
+ }
+```
 
 
 4. Déploiement du module
 
+* Via docker:
+```shell script
+bash run_container.sh
+```
 
+* En local:
+```shell script
+pip install -r requirements.txt
+python run.py
+```
+
+Des requètes peuvent être envoyées au module via son addresse par défaut localhost:5000.

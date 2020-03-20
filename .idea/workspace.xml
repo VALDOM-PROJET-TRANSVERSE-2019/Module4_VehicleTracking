@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/objects/vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/vehicle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/track2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/track2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +232,7 @@
       <workItem from="1584698722713" duration="2371000" />
       <workItem from="1584701103039" duration="2312000" />
       <workItem from="1584703423586" duration="7000" />
-      <workItem from="1584703635020" duration="2171000" />
+      <workItem from="1584703635020" duration="2794000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1581604975314</created>
@@ -281,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584691293161</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="REPLACE opencv by PIL&#10;ENHANCE track2 memory usage">
+      <created>1584706057512</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584706057512</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +342,8 @@
     <MESSAGE value="v2.2 &#10;PEP8 cleaning &#10;API REST implementation&#10;Project Structure" />
     <MESSAGE value="v2.2 &#10;Add unit test&#10;Add requirements.txt&#10;Add Dockerfile" />
     <MESSAGE value="ADD config.py&#10;ADD view.py (replace __main__.py)&#10;ADD run.py (to run the app)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD config.py&#10;ADD view.py (replace __main__.py)&#10;ADD run.py (to run the app)" />
+    <MESSAGE value="REPLACE opencv by PIL&#10;ENHANCE track2 memory usage" />
+    <option name="LAST_COMMIT_MESSAGE" value="REPLACE opencv by PIL&#10;ENHANCE track2 memory usage" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2554" y="87" width="644" height="906" key="#Dockerfile" timestamp="1584639367052">
@@ -363,13 +366,13 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="696" y="396" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.28.1920.1024@0.28.1920.1024" timestamp="1584091318272" />
-    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584705997008">
+    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584706057415">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="326" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584021640093" />
     <state x="32" y="28" width="1320" height="711" key="CommitChangelistDialog2/0.28.1360.712@0.28.1360.712" timestamp="1583832747750" />
     <state x="160" y="87" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095453325" />
-    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584705997008" />
+    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584706057415" />
     <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog" timestamp="1584705959846">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -433,12 +436,12 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.28.1920.1024@0.28.1920.1024" timestamp="1584094350004" />
-    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1584691303705">
+    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2" timestamp="1584706553057">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581605112036" />
     <state x="427" y="244" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095460284" />
-    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584691303705" />
+    <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584706553057" />
     <state x="2394" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584703425140">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
