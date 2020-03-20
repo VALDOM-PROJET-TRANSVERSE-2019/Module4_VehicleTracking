@@ -1,8 +1,8 @@
 """
 Routes for Flask app
 """
-from flask import Flask, request, jsonify
-from flask_restplus import Api, Resource
+from flask import Flask, jsonify
+from flask_restplus import Api, Resource, reqparse
 
 from tracker import track2
 
@@ -17,19 +17,22 @@ app.config['CACHE_TYPE'] = 'simple'
 class Tracker(Resource):
     @ns_track.doc(params={'list_frame_contour': 'A path', "frame_path": 'A path'})
     def post(self):
-        list_frame_contour = request.args.get('list_frame_contour', None)
-        frame_path = request.args.get('frame_path', None)
-
+        parser = reqparse.RequestParser()
+        parser.add_argument('list_frame_contour', type=str,required= True, help='Rate cannot be converted')
+        parser.add_argument('frame_path', type=str,required= True, help='Rate cannot be converted')
+        args = parser.parse_args()
+        #list_frame_contour = request.args.get('list_frame_contour', None)
+        #frame_path = request.args.get('frame_path', None)
         message = ""
         status = "success"
-        if not list_frame_contour:
+        if not args.list_frame_contour:
             status = 'error'
             message += 'missing list_frame_contour ; '
-        if not frame_path:
+        if not args.frame_path:
             status = 'error'
             message += 'missing frame_path ; '
 
-        output = track2.track(frame_path, list_frame_contour)
+        output = track2.track(args.frame_path, args.list_frame_contour)
 
         if status == "error":
             return jsonify({
