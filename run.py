@@ -1,4 +1,7 @@
-from tracker import app
+"""
+Tracker launcher
+"""
+from tracker import APP
 
 if __name__ == "__main__":
-    app.run(host=app.config["FLASK_HOST_ADDRESS"], port=app.config["FLASK_PORT"])
+    APP.run(host=APP.config["FLASK_HOST_ADDRESS"], port=APP.config["FLASK_PORT"])

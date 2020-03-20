@@ -90,8 +90,10 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
     :param memory_frames_number: int,
     :return:
     """
-    images = sorted([f for f in listdir(images_folder) if isfile(join(images_folder, f))], key=numerical_sort)
-    bounding_boxes = sorted([f for f in listdir(bb_folder) if isfile(join(bb_folder, f))], key=numerical_sort)
+    images = sorted([f for f in listdir(images_folder) if isfile(join(images_folder, f))],
+                    key=numerical_sort)
+    bounding_boxes = sorted([f for f in listdir(bb_folder) if isfile(join(bb_folder, f))],
+                            key=numerical_sort)
 
     img_array = []
     img_pil = []
@@ -103,9 +105,9 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
         img = Image.open(images_folder + image)
         img_pil.append(img)
         img_array.append(np.asarray(img))
-    for bb in bounding_boxes:
-        with open(bb_folder + bb) as f:
-            data = json.load(f)
+    for b_b in bounding_boxes:
+        with open(bb_folder + b_b) as file:
+            data = json.load(file)
         bb_array.append(data)
 
     detected_vehicles = []
@@ -113,52 +115,53 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
         detected_objects = []
 
         # Reset visibility
-        for dv in detected_vehicles:
-            dv.update_counter(False)
-            if dv.counter > memory_frames_number:
-                detected_vehicles.remove(dv)
+        for d_v in detected_vehicles:
+            d_v.update_counter(False)
+            if d_v.counter > memory_frames_number:
+                detected_vehicles.remove(d_v)
 
         # Retrieve the different objects
-        for o in bbs:
-            if o['object'] == 'car' or o['object'] == 'truck':
-                detected_objects.append(DetectedObject(o, img))
+        for obj in bbs:
+            if obj['object'] == 'car' or obj['object'] == 'truck':
+                detected_objects.append(DetectedObject(obj, img))
 
         # Delete overlaps
-        for do1 in detected_objects:
-            for do2 in detected_objects:
-                if do1 != do2:
-                    if overlap(do1.bounding_box, do2.bounding_box) > 0.6:
-                        detected_objects.remove(do2)
+        for do_1 in detected_objects:
+            for do_2 in detected_objects:
+                if do_1 != do_2:
+                    if overlap(do_1.get_coordinate(), do_2.get_coordinate()) > 0.6:
+                        detected_objects.remove(do_2)
 
         potential_vehicles_indexes = [i for i in range(len(detected_vehicles))]
-        for do in detected_objects:
+
+        for d_o in detected_objects:
             found = False
             distances = []
 
             # Distances calculation
             for j in potential_vehicles_indexes:
-                distances.append(do.get_distance_from(detected_vehicles[j]))
+                distances.append(d_o.get_distance_from(detected_vehicles[j]))
 
-            if len(distances) != 0:
+            if distances:
                 shortest_distance = min(distances)
                 shortest_distance_index = distances.index(shortest_distance)
 
                 if shortest_distance < detection_threshold:
                     found = True
                     vehicle_index = potential_vehicles_indexes[shortest_distance_index]
-                    detected_vehicles[vehicle_index].update_vehicle(do)
+                    detected_vehicles[vehicle_index].update_vehicle(d_o)
                     potential_vehicles_indexes.remove(potential_vehicles_indexes[shortest_distance_index])
 
             if not found:
-                detected_vehicles.append(Vehicle(do, vehicle_count))
+                detected_vehicles.append(Vehicle(d_o, vehicle_count))
                 vehicle_count += 1
 
         print("Frame {}".format(i))
-        for dv in detected_vehicles:
-            if dv.visible:
-                dv.draw(pil)
+        for d_v in detected_vehicles:
+            if d_v.visible:
+                d_v.draw(pil)
 
-        output_data["frame " + str(i)] = [dv.id for dv in detected_vehicles]
+        output_data["frame " + str(i)] = [d_v.get_id() for d_v in detected_vehicles]
 
     return output_data
 

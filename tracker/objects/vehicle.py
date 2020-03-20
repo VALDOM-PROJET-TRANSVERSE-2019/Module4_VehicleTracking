@@ -13,16 +13,14 @@ class Vehicle:
     A tracked vehicle, defined by an unique id and from a DetectedObject
     """
 
-    def __init__(self, detected_object, id):
-        self.frame_size = detected_object.frame_size
-        self.x = detected_object.x
-        self.y = detected_object.y
-        self.w = detected_object.w
-        self.h = detected_object.h
+    def __init__(self, detected_object, identifier):
+        self.frame_size = detected_object.get_frame_size()
+        self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
+        self.bounding_box = detected_object.get_coordinate
 
-        self.id = id
+        self.__id = identifier
         self.visible = True
-        self.center = detected_object.center
+        self.center = detected_object.get_center()
         self.speed = [0, 0]
         self.update_prob_position()
         self.mean_colors = detected_object.mean_colors
@@ -34,7 +32,7 @@ class Vehicle:
         :param frame: array, frame
         :return:
         """
-        frame_zone = frame[self.y:self.y + self.h, self.x:self.x + self.w]
+        frame_zone = frame[self.__y:self.__y + self.__h, self.__x:self.__x + self.__w]
         frame_zone = np.array(frame_zone)
         color_r = np.mean(frame_zone[:, :, 0])
         color_g = np.mean(frame_zone[:, :, 1])
@@ -47,13 +45,13 @@ class Vehicle:
         :return: array (x,y,w,h,r,g,b)
         """
         if self.visible:
-            x = self.x / self.frame_size[0]
-            y = self.y / self.frame_size[1]
+            x = self.__x / self.frame_size[0]
+            y = self.__y / self.frame_size[1]
         else:
             x = self.prob_x / self.frame_size[0]
             y = self.prob_y / self.frame_size[1]
-        w = self.w / self.frame_size[0]
-        h = self.h / self.frame_size[1]
+        w = self.__w / self.frame_size[0]
+        h = self.__h / self.frame_size[1]
         r = self.mean_colors[0] / 255
         g = self.mean_colors[1] / 255
         b = self.mean_colors[2] / 255
@@ -65,12 +63,12 @@ class Vehicle:
         :param frame: array, frame
         :return:
         """
-
         draw = ImageDraw.Draw(frame)
         font = ImageFont.truetype("FreeMono.ttf", 16)
-        draw.rectangle([(self.x, self.y), (self.x + self.w, self.y + self.h)], outline=(0, 255, 0), width=2)
-        draw.text([self.x, self.y - 20], "Vehicle", (0, 255, 0), font=font)
-        draw.text([self.x, self.y - 40], str(self.id), (0, 255, 0), font=font)
+        draw.rectangle([(self.__x, self.__y), (self.__x + self.__w, self.__y + self.__h)],
+                       outline=(0, 255, 0), width=2)
+        draw.text([self.__x, self.__y - 20], "Vehicle", (0, 255, 0), font=font)
+        draw.text([self.__x, self.__y - 40], str(self.__id), (0, 255, 0), font=font)
 
     def update_counter(self, visible):
         """
@@ -91,12 +89,9 @@ class Vehicle:
         """
         self.visible = True
         self.speed = self.compute_speed(detected_object)
-        self.x = detected_object.x
-        self.y = detected_object.y
-        self.w = detected_object.w
-        self.h = detected_object.h
-        self.bounding_box = self.x, self.y, self.w, self.h
-        self.center = detected_object.center
+        self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
+        self.bounding_box = self.__x, self.__y, self.__w, self.__h
+        self.center = detected_object.get_center()
         self.mean_colors = detected_object.mean_colors
         self.update_prob_position()
 
@@ -106,12 +101,40 @@ class Vehicle:
         :param detected_object:
         :return: list, (Vx,Vy)
         """
-        return [detected_object.x - self.x, detected_object.y - self.y]
+        return [detected_object.get_x() - self.__x, detected_object.get_y() - self.__y]
 
     def update_prob_position(self):
         """
         Update probable position of the vehicle
         :return:
         """
-        self.prob_x = self.x + self.speed[0]
-        self.prob_y = self.y + self.speed[1]
+        self.prob_x = self.__x + self.speed[0]
+        self.prob_y = self.__y + self.speed[1]
+
+    def get_id(self):
+        """
+        Get vehicle identifier
+        :return: id, int
+        """
+        return self.__id
+
+    def get_coordinate(self):
+        """
+        Get all coordinates of the vehicle
+        :return: x, y, w, h (int, int, int, int)
+        """
+        return self.__x, self.__y, self.__w, self.__h
+
+    def get_x(self):
+        """
+        Get x coordinate of the vehicle
+        :return: x (int)
+        """
+        return self.__x
+
+    def get_y(self):
+        """
+        Get y coordinate of the vehicle
+        :return: y (int)
+        """
+        return self.__y

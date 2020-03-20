@@ -1,3 +1,6 @@
+"""
+Module for testing flask api with unittest
+"""
 import json
 import unittest
 from urllib import request
@@ -7,6 +10,11 @@ class TestPost(unittest.TestCase):
     data = {'list_frame_contour': 'data/bounding_boxes/', "frame_path": 'data/image/'}
 
     def test_json_output(self):
+        """
+        test types of output request
+        test values and length of output request
+        :return:
+        """
         req = request.Request("http://0.0.0.0:5000/Track/", self.data)
         req.add_header('Content-Type', 'application/json; charset=utf-8')
         json_data = json.dumps(self.data).encode("utf8")
