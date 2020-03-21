@@ -18,9 +18,9 @@ class Tracker(Resource):
     Resource class to generate Swagger for REST API
     """
     @TRACK.doc(params={'list_frame_contour': 'A path', "frame_path": 'A path'})
-    def post(self):
+    def get(self):
         """
-        POST method, request the paths of images and bounding_boxes
+        GET method, request the paths of images and bounding_boxes
         :return: json file
         """
         parser = reqparse.RequestParser()
@@ -38,13 +38,11 @@ class Tracker(Resource):
         if not args.frame_path:
             status = 'error'
             message += 'missing frame_path ; '
-
-        output = track2.track(args.frame_path, args.list_frame_contour)
-
         if status == "error":
             return jsonify({
                 'status': status,
                 'message': message
             })
-        else:
-            return output
+        else : 
+            output = track2.track(args.frame_path, args.list_frame_contour)
+            return output               
