@@ -51,4 +51,30 @@ class TestGet(unittest.TestCase):
 
         req = request.Request(full_url)
         with self.assertRaises(HTTPError):
-            result = request.urlopen(req).read()
+            request.urlopen(req).read()
+
+    def test_error_frame_missing(self):
+        """
+        tests error message values when frame_path is missing
+        :return:
+        """
+        url_values = urllib.parse.urlencode(self.data_frame_missing)
+        url = "http://0.0.0.0:5000/Track/"
+        full_url = url + '?' + url_values
+
+        req = request.Request(full_url)
+        with self.assertRaises(HTTPError):
+            request.urlopen(req).read()
+
+    def test_error_all_missing(self):
+        """
+        tests error message values when list_frame_contour and frame_path are missing
+        :return:
+        """
+        url_values = urllib.parse.urlencode(self.data_all_missing)
+        url = "http://0.0.0.0:5000/Track/"
+        full_url = url + '?' + url_values
+
+        req = request.Request(full_url)
+        with self.assertRaises(HTTPError):
+            request.urlopen(req).read()
