@@ -110,7 +110,6 @@ def track(images_folder, bb_folder, detection_threshold=0.25, memory_frames_numb
             # Distances calculation
             for j in potential_vehicles_indexes:
                 distances.append(d_o.get_distance_from(detected_vehicles[j]))
-            print(distances)
 
             if distances:
                 shortest_distance = min(distances)
@@ -126,7 +125,6 @@ def track(images_folder, bb_folder, detection_threshold=0.25, memory_frames_numb
                 detected_vehicles.append(Vehicle(d_o, vehicle_count))
                 vehicle_count += 1
 
-        print("Frame {}".format(i))
         for d_v in detected_vehicles:
             if d_v.visible:
                 d_v.draw(pil)
