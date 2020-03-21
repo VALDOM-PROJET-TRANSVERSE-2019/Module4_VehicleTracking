@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="Removing font attributes from PIL (no font on docker image)">
-      <change afterPath="$PROJECT_DIR$/data/bounding_box.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.gif" beforeDir="false" afterPath="$PROJECT_DIR$/output.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracker/objects/detectedobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/detectedobject.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tracker/track2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/track2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,6 +242,7 @@
       <workItem from="1584703423586" duration="7000" />
       <workItem from="1584703635020" duration="13617000" />
       <workItem from="1584796579229" duration="9857000" />
+      <workItem from="1584813040927" duration="286000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1581604975314</created>
@@ -480,6 +476,14 @@
     </state>
     <state width="1874" height="428" key="GridCell.Tab.1.right/0.28.1920.1024@0.28.1920.1024" timestamp="1584095512920" />
     <state width="937" height="428" key="GridCell.Tab.1.right/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584802868295" />
+    <state x="2103" y="93" width="1538" height="893" key="MergeDialog" timestamp="1584813258437">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2103" y="93" width="1538" height="893" key="MergeDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584813258437" />
+    <state x="2585" y="258" width="582" height="563" key="MultipleFileMergeDialog" timestamp="1584813258441">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2585" y="258" width="582" height="563" key="MultipleFileMergeDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584813258441" />
     <state x="2225" y="107" key="SettingsEditor" timestamp="1584716233886">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -508,10 +512,14 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="679" y="277" width="554" height="525" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1584095518315" />
-    <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog" timestamp="1584800815183">
+    <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog" timestamp="1584813145526">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584800815183" />
+    <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584813145526" />
+    <state x="2594" y="443" width="564" height="194" key="git4idea.ui.GitStashDialog" timestamp="1584813138566">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2594" y="443" width="564" height="194" key="git4idea.ui.GitStashDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584813138566" />
     <state x="2433" y="235" width="894" height="812" key="search.everywhere.popup" timestamp="1584715133391">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

@@ -103,7 +103,6 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
         img_array.append(np.asarray(img))
 
     # Instantiate bounding_boxes
-    print(bb_folder[-5:])
     if bb_folder[-5:] == ".json":
         # Open as it is a json
         try:
