@@ -135,7 +135,3 @@ def track(images_folder, bb_folder, detection_threshold=0.25, memory_frames_numb
 
     imageio.mimsave('output.gif', img_pil)
     optimize("output.gif")
-
-
-if __name__ == '__main__':
-    main(sys.argv)
