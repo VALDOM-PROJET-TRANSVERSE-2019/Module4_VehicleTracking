@@ -5,11 +5,13 @@ import json
 import unittest
 import urllib
 from urllib import request
+from urllib.error import HTTPError
 
-
-class TestPost(unittest.TestCase):
+class TestGet(unittest.TestCase):
     data = {'list_frame_contour': 'data/bounding_boxes/', "frame_path": 'data/image/'}
-
+    data_bb_missing = {"frame_path": 'data/image/'}
+    data_frame_missing = {'list_frame_contour': 'data/bounding_boxes/'}
+    data_all_missing = {}
     def test_json_output(self):
         """
         test types of output request
@@ -21,10 +23,8 @@ class TestPost(unittest.TestCase):
         full_url = url + '?' + url_values
 
         req = request.Request(full_url)
-        req.add_header('Content-Type', 'application/json; charset=utf-8')
 
-
-        result = request.urlopen(full_url).read()
+        result = request.urlopen(req).read()
         output = json.loads(result.decode("utf8"))
 
         self.assertEqual(type(output), dict)
@@ -39,3 +39,16 @@ class TestPost(unittest.TestCase):
 
         self.assertNotIn("frame 519", output.keys())
         self.assertEqual(len(output), 519)
+
+    def test_error_bb_missing(self):
+        """
+        tests error message values when list_frame_contour is missing
+        :return:
+        """
+        url_values = urllib.parse.urlencode(self.data_bb_missing)
+        url = "http://0.0.0.0:5000/Track/"
+        full_url = url + '?' + url_values
+
+        req = request.Request(full_url)
+        with self.assertRaises(HTTPError):
+            result = request.urlopen(req).read()
