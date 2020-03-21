@@ -3,6 +3,7 @@ Module for testing flask api with unittest
 """
 import json
 import unittest
+import urllib
 from urllib import request
 
 
@@ -15,10 +16,15 @@ class TestPost(unittest.TestCase):
         test values and length of output request
         :return:
         """
-        req = request.Request("http://0.0.0.0:5000/Track/", self.data)
+        url_values = urllib.parse.urlencode(self.data)
+        url = "http://0.0.0.0:5000/Track/"
+        full_url = url + '?' + url_values
+
+        req = request.Request(full_url)
         req.add_header('Content-Type', 'application/json; charset=utf-8')
-        json_data = json.dumps(self.data).encode("utf8")
-        result = request.urlopen(req, json_data).read()
+
+
+        result = request.urlopen(full_url).read()
         output = json.loads(result.decode("utf8"))
 
         self.assertEqual(type(output), dict)
