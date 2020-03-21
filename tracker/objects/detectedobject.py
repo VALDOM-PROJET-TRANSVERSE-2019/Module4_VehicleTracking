@@ -56,7 +56,7 @@ class DetectedObject:
         y = self.__y / self.__frame_size[1]
         w = self.__w / self.__frame_size[0]
         h = self.__h / self.__frame_size[1]
-        r, g, b = np.array(self.mean_colors) / 255
+        r, g, b = np.array(self.mean_colors)
         return np.array([x, y, w, h, r, g, b])
 
     def get_coordinate(self):
