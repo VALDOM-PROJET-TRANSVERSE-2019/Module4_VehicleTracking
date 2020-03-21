@@ -23,7 +23,6 @@ class Tracker(Resource):
         GET method, request the paths of images and bounding_boxes
         :return: json file
         """
-
         parser = reqparse.RequestParser()
         parser.add_argument('list_frame_contour', type=str,
                             required=True, help='Bounding boxes (json)')
@@ -31,19 +30,5 @@ class Tracker(Resource):
                             required=True, help='Path to images')
         args = parser.parse_args()
 
-        message = ""
-        status = "success"
-        if not args.list_frame_contour:
-            status = 'error'
-            message += 'missing list_frame_contour ; '
-        if not args.frame_path:
-            status = 'error'
-            message += 'missing frame_path ; '
-        if status == "error":
-            return jsonify({
-                'status': status,
-                'message': message
-            })
-        else:
-            output = track2.track(args.frame_path, args.list_frame_contour)
-            return output
+        output = track2.track(args.frame_path, args.list_frame_contour)
+        return output

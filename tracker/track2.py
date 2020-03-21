@@ -15,9 +15,6 @@ from PIL import Image
 from tracker.objects import DetectedObject
 from tracker.objects import Vehicle
 
-NUMBERS = re.compile(r'(\d+)')
-
-
 def main(argv):
     """
     :param argv: parser
@@ -52,6 +49,7 @@ def numerical_sort(value):
     :param value:
     :return:
     """
+    NUMBERS = re.compile(r'(\d+)')
     parts = NUMBERS.split(value)
     parts[1::2] = map(int, parts[1::2])
     return parts
