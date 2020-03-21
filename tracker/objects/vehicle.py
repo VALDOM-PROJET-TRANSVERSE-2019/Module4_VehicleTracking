@@ -52,9 +52,9 @@ class Vehicle:
             y = self.prob_y / self.frame_size[1]
         w = self.__w / self.frame_size[0]
         h = self.__h / self.frame_size[1]
-        r = self.mean_colors[0] / 255
-        g = self.mean_colors[1] / 255
-        b = self.mean_colors[2] / 255
+        r = self.mean_colors[0]
+        g = self.mean_colors[1]
+        b = self.mean_colors[2]
         return np.array([x, y, w, h, r, g, b])
 
     def draw(self, frame):
