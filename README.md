@@ -46,3 +46,6 @@ python run.py
 ```
 
 Des requètes peuvent être envoyées au module via son addresse par défaut localhost:5000.
+
+5. Fonctionnement du tracker
+Pour chaque image le tracker récupère les bounding_box associées dans le json. Des DetectedObject sont générés pour chaques bounding_box, leur position/couleur sont comparés avec la liste de véhicule déjà détectés. Si un nouvel objet est trop différent de tous les véhicules déjà détectés, alors il est considéré comme étant nouveau et reçoit un nouvelle ID. Sinon il prend l'ID du véhicule dont il est le plus similaire.
