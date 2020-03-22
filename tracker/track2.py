@@ -61,8 +61,6 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
     """
     images = sorted([f for f in listdir(images_folder) if isfile(join(images_folder, f))],
                     key=numerical_sort)
-    bounding_boxes = sorted([f for f in listdir(bb_folder) if isfile(join(bb_folder, f))],
-                            key=numerical_sort)
 
     img_array = []
     img_pil = []
@@ -74,10 +72,22 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
         img = Image.open(images_folder + image)
         img_pil.append(img)
         img_array.append(np.asarray(img))
-    for b_b in bounding_boxes:
-        with open(bb_folder + b_b) as file:
-            data = json.load(file)
-        bb_array.append(data)
+
+    # Instantiate bounding_boxes
+    if bb_folder[-5:] == ".json":
+        # Open as it is a json
+        try:
+            data_file = json.load(open(bb_folder, 'r'))
+            for content in data_file.values():
+                bb_array.append(content)
+        except IsADirectoryError:
+            print("Provide a json file or similar")
+            return "Provide a json file or similar"
+    else:
+        # Open as it is a dictionnary
+        data_file = json.loads(bb_folder)
+        for content in data_file.values():
+            bb_array.append(content)
 
     detected_vehicles = []
     for i, (img, pil, bbs) in enumerate(zip(img_array, img_pil, bb_array)):
