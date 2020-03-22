@@ -34,9 +34,9 @@ class Vehicle:
         """
         frame_zone = frame[self.__y:self.__y + self.__h, self.__x:self.__x + self.__w]
         frame_zone = np.array(frame_zone)
-        color_r = np.mean(frame_zone[:, :, 0])
-        color_g = np.mean(frame_zone[:, :, 1])
-        color_b = np.mean(frame_zone[:, :, 2])
+        color_r = np.mean(frame_zone[:, :, 0]) / 255
+        color_g = np.mean(frame_zone[:, :, 1]) / 255
+        color_b = np.mean(frame_zone[:, :, 2]) / 255
         self.mean_colors = (color_r, color_g, color_b)
 
     def get_feature_array(self):

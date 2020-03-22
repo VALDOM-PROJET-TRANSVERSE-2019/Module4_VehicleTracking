@@ -51,7 +51,7 @@ def overlap(box1, box2):
         return ratio
 
 
-def track(images_folder, bb_folder, detection_threshold=0.25, memory_frames_number=10):
+def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_number=10):
     """
     :param images_folder: str, path to the images folder
     :param bb_folder: str, path to bounding_boxes folder
@@ -129,7 +129,7 @@ def track(images_folder, bb_folder, detection_threshold=0.25, memory_frames_numb
             if d_v.visible:
                 d_v.draw(pil)
 
-        output_data["frame " + str(i)] = [d_v.get_id() for d_v in detected_vehicles]
+        output_data["frame " + str(i)] = [d_v.get_id() for d_v in detected_vehicles if d_v.visible]
 
     return output_data
 

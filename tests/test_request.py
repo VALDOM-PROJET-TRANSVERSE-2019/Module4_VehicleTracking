@@ -8,10 +8,12 @@ from urllib import request
 from urllib.error import HTTPError
 
 class TestGet(unittest.TestCase):
-    data = {'list_frame_contour': 'data/bounding_boxes/', "frame_path": 'data/image/'}
-    data_bb_missing = {"frame_path": 'data/image/'}
-    data_frame_missing = {'list_frame_contour': 'data/bounding_boxes/'}
-    data_all_missing = {}
+    def setUp(self):
+        self.data = {'list_frame_contour': 'data/bounding_boxes/', "frame_path": 'data/image/'}
+        self.data_bb_missing = {"frame_path": 'data/image/'}
+        self.data_frame_missing = {'list_frame_contour': 'data/bounding_boxes/'}
+        self.data_all_missing = {}
+
     def test_json_output(self):
         """
         test types of output request
@@ -35,7 +37,7 @@ class TestGet(unittest.TestCase):
 
         self.assertEqual(output["frame 11"], [0])
         self.assertEqual(output["frame 18"], [0, 1])
-        self.assertEqual(output["frame 518"], [62])
+        self.assertEqual(output["frame 518"], [])
 
         self.assertNotIn("frame 519", output.keys())
         self.assertEqual(len(output), 519)
