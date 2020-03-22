@@ -51,7 +51,7 @@ def overlap(box1, box2):
         return ratio
 
 
-def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_number=10):
+def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10):
     """
     :param images_folder: str, path to the images folder
     :param bb_folder: str, path to bounding_boxes folder

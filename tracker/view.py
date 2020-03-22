@@ -17,7 +17,7 @@ class Tracker(Resource):
     """
     Resource class to generate Swagger for REST API
     """
-    @TRACK.doc(params={'list_frame_contour': 'A path', "frame_path": 'A path'})
+    @TRACK.doc(params={'list_frame_contour': 'A path', "frame_path": 'A path', 'distance_threshold': 'A float'})
     def get(self):
         """
         GET method, request the paths of images and bounding_boxes
@@ -28,7 +28,10 @@ class Tracker(Resource):
                             required=True, help='Bounding boxes (json)')
         parser.add_argument('frame_path', type=str,
                             required=True, help='Path to images')
+        parser.add_argument('distance_threshold', type=float,
+                            help='Distance at which a new detectedObject will not be associated with a Vehicle',
+                            default=0.2)
         args = parser.parse_args()
 
-        output = track2.track(args.frame_path, args.list_frame_contour)
+        output = track2.track(args.frame_path, args.list_frame_contour, args.distance_threshold)
         return output
