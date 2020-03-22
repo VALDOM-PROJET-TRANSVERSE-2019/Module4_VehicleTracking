@@ -33,4 +33,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with unittest
       run: |
-        python -m unittest -v
+        python -m unittest -v tests/test_detectedobject.py
+        python -m unittest -v tests/test_numerical_sort.py
+        python -m unittest -v tests/test_overlap.py
