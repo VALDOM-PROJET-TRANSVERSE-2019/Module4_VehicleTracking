@@ -15,6 +15,7 @@ class TestGet(unittest.TestCase):
         self.data_bb_missing = {"frame_path": 'data/image/'}
         self.data_frame_missing = {'list_frame_contour': 'data/bounding_boxes/'}
         self.data_all_missing = {}
+        self.url = "http://0.0.0.0:5000/Track_from_JSON/"
 
     def test_json_output(self):
         """
@@ -23,8 +24,7 @@ class TestGet(unittest.TestCase):
         :return:
         """
         url_values = urllib.parse.urlencode(self.data)
-        url = "http://0.0.0.0:5000/Track/"
-        full_url = url + '?' + url_values
+        full_url = self.url + '?' + url_values
 
         req = request.Request(full_url)
         req.add_header('Content-Type', 'application/json; charset=utf-8')
@@ -56,8 +56,7 @@ class TestGet(unittest.TestCase):
         data = {'list_frame_contour': json.dumps(data_file), "frame_path": 'data/image/'}
 
         url_values = urllib.parse.urlencode(data, quote_via=urllib.parse.quote)
-        url = "http://0.0.0.0:5000/Track/"
-        full_url = url + '?' + url_values
+        full_url = self.url + '?' + url_values
 
         req = request.Request(full_url)
         req.add_header('Content-Type', 'application/json; charset=utf-8')
@@ -84,8 +83,7 @@ class TestGet(unittest.TestCase):
         :return:
         """
         url_values = urllib.parse.urlencode(self.data_bb_missing)
-        url = "http://0.0.0.0:5000/Track/"
-        full_url = url + '?' + url_values
+        full_url = self.url + '?' + url_values
 
         req = request.Request(full_url)
         with self.assertRaises(HTTPError):
@@ -97,8 +95,7 @@ class TestGet(unittest.TestCase):
         :return:
         """
         url_values = urllib.parse.urlencode(self.data_frame_missing)
-        url = "http://0.0.0.0:5000/Track/"
-        full_url = url + '?' + url_values
+        full_url = self.url + '?' + url_values
 
         req = request.Request(full_url)
         with self.assertRaises(HTTPError):
@@ -110,7 +107,7 @@ class TestGet(unittest.TestCase):
         :return:
         """
         url_values = urllib.parse.urlencode(self.data_all_missing)
-        url = "http://0.0.0.0:5000/Track/"
+        url = "http://0.0.0.0:5000/Track_from_JSON/"
         full_url = url + '?' + url_values
 
         req = request.Request(full_url)

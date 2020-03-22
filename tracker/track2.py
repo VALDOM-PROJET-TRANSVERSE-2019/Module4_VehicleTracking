@@ -1,10 +1,8 @@
 """
 This module is the core tracking system
 """
-import argparse
 import json
 import re
-import sys
 from os import listdir
 from os.path import isfile, join
 
@@ -15,13 +13,14 @@ from PIL import Image
 from tracker.objects import DetectedObject
 from tracker.objects import Vehicle
 
+
 def numerical_sort(value):
     """
     :param value:
     :return:
     """
-    NUMBERS = re.compile(r'(\d+)')
-    parts = NUMBERS.split(value)
+    numbers = re.compile(r'(\d+)')
+    parts = numbers.split(value)
     parts[1::2] = map(int, parts[1::2])
     return parts
 
@@ -74,7 +73,7 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
         img_array.append(np.asarray(img))
 
     # Instantiate bounding_boxes
-    if bb_folder[-5:] == ".json":
+    if str(bb_folder)[-5:] == ".json":
         # Open as it is a json
         try:
             data_file = json.load(open(bb_folder, 'r'))
@@ -85,8 +84,12 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
             return "Provide a json file or similar"
     else:
         # Open as it is a dictionnary
-        data_file = json.loads(bb_folder)
+        try:
+            data_file = json.loads(bb_folder)
+        except TypeError:
+            data_file = bb_folder
         for content in data_file.values():
+            print(type(content))
             bb_array.append(content)
 
     detected_vehicles = []
@@ -100,6 +103,7 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
                 detected_vehicles.remove(d_v)
 
         # Retrieve the different objects
+        print(type(bbs))
         for obj in bbs:
             if obj['object'] == 'car' or obj['object'] == 'truck':
                 detected_objects.append(DetectedObject(obj, img))

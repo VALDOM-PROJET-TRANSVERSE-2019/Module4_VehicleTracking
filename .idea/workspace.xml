@@ -4,10 +4,17 @@
     <option name="SHOW_STRUCTURE" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="Correcting warning test request">
+    <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="PEP8 cleaning on code&#10;ADDING route for GET to a MongoDB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_detectedobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_detectedobject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_numerical_sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_numerical_sort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_overlap.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_overlap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_vehicle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracker/objects/vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/vehicle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tracker/track2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/track2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracker/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,6 +254,7 @@
       <workItem from="1584813040927" duration="286000" />
       <workItem from="1584884705338" duration="253000" />
       <workItem from="1584887350788" duration="841000" />
+      <workItem from="1584898108347" duration="5350000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1581604975314</created>
@@ -389,7 +397,8 @@
     <MESSAGE value="Testing request from external ==&gt; modifying view.py (parser)" />
     <MESSAGE value="Modifing Object structure (protected attributes)&#10;Pylint OK on tracker module (8.7/10)" />
     <MESSAGE value="Removing font attributes from PIL (no font on docker image)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing font attributes from PIL (no font on docker image)" />
+    <MESSAGE value="PEP8 cleaning on code&#10;ADDING route for GET to a MongoDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="PEP8 cleaning on code&#10;ADDING route for GET to a MongoDB" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2554" y="87" width="644" height="906" key="#Dockerfile" timestamp="1584639367052">
@@ -412,22 +421,22 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2476" y="303" width="512" height="484" key="#com.intellij.tools.ToolEditorDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584713073528" />
-    <state x="2616" y="388" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584711350506">
+    <state x="2616" y="388" width="520" height="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584904268081">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="696" y="396" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.28.1920.1024@0.28.1920.1024" timestamp="1584091318272" />
-    <state x="2616" y="388" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584711350506" />
-    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584888191572">
+    <state x="2616" y="388" width="520" height="268" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584904268081" />
+    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584904473387">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="326" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584021640093" />
     <state x="32" y="28" width="1320" height="711" key="CommitChangelistDialog2/0.28.1360.712@0.28.1360.712" timestamp="1583832747750" />
     <state x="160" y="87" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095453325" />
-    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584888191572" />
-    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog" timestamp="1584888189547">
+    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584904473387" />
+    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog" timestamp="1584904458309">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584888189547" />
+    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584904458309" />
     <state width="937" height="269" key="GridCell.Tab.0.bottom" timestamp="1584803508328">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -488,13 +497,13 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2585" y="258" width="582" height="563" key="MultipleFileMergeDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584884835875" />
-    <state x="2225" y="107" key="SettingsEditor" timestamp="1584887373771">
+    <state x="2225" y="107" key="SettingsEditor" timestamp="1584900273214">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583841000805" />
     <state x="216" y="28" key="SettingsEditor/0.28.1360.712@0.28.1360.712" timestamp="1583826466894" />
     <state x="305" y="129" key="SettingsEditor/0.28.1920.1024@0.28.1920.1024" timestamp="1584086620165" />
-    <state x="2225" y="107" key="SettingsEditor/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584887373771" />
+    <state x="2225" y="107" key="SettingsEditor/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584900273214" />
     <state width="498" height="471" key="SwitcherDM" timestamp="1584712007364">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -506,12 +515,12 @@
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581605112036" />
     <state x="427" y="244" width="802" height="527" key="Vcs.Push.Dialog.v2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095460284" />
     <state x="2347" y="228" width="802" height="527" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584800832469" />
-    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584887350952">
+    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584898110335">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="336" y="212" key="com.intellij.ide.util.TipDialog/0.28.1360.712@0.28.1360.712" timestamp="1583831102405" />
     <state x="474" y="293" key="com.intellij.ide.util.TipDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1584088925358" />
-    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584887350952" />
+    <state x="2394" y="279" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584898110335" />
     <state x="679" y="277" width="554" height="525" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1584095518315">
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
@@ -524,10 +533,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2582" y="334" width="596" height="412" key="git4idea.merge.GitMergeDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584884923517" />
-    <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog" timestamp="1584813145526">
+    <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog" timestamp="1584900198312">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584813145526" />
+    <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584900198312" />
     <state x="2594" y="443" width="564" height="194" key="git4idea.ui.GitStashDialog" timestamp="1584813138566">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
