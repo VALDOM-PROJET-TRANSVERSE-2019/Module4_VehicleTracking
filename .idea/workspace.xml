@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e071c331-c9ca-4753-ab36-2601c69bdb52" name="Default Changelist" comment="Removing font attributes from PIL (no font on docker image)">
-      <change beforePath="$PROJECT_DIR$/tracker/objects/detectedobject.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/detectedobject.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/pythonapp.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.gif" beforeDir="false" afterPath="$PROJECT_DIR$/output.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracker/objects/vehicle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/objects/vehicle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tracker/track2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tracker/track2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,6 +246,7 @@
       <workItem from="1584703635020" duration="13617000" />
       <workItem from="1584796579229" duration="9857000" />
       <workItem from="1584813040927" duration="286000" />
+      <workItem from="1584884705338" duration="253000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1581604975314</created>
@@ -413,17 +417,17 @@
     </state>
     <state x="696" y="396" width="520" height="287" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.28.1920.1024@0.28.1920.1024" timestamp="1584091318272" />
     <state x="2616" y="388" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584711350506" />
-    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584808049912">
+    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2" timestamp="1584884949216">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="326" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584021640093" />
     <state x="32" y="28" width="1320" height="711" key="CommitChangelistDialog2/0.28.1360.712@0.28.1360.712" timestamp="1583832747750" />
     <state x="160" y="87" key="CommitChangelistDialog2/0.28.1920.1024@0.28.1920.1024" timestamp="1584095453325" />
-    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584808049912" />
-    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog" timestamp="1584716379199">
+    <state x="2707" y="81" width="873" height="860" key="CommitChangelistDialog2/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584884949216" />
+    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog" timestamp="1584884940401">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584716379199" />
+    <state x="2294" y="64" width="1538" height="893" key="DiffContextDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584884940401" />
     <state width="937" height="269" key="GridCell.Tab.0.bottom" timestamp="1584803508328">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -480,10 +484,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2103" y="93" width="1538" height="893" key="MergeDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584813258437" />
-    <state x="2585" y="258" width="582" height="563" key="MultipleFileMergeDialog" timestamp="1584813258441">
+    <state x="2585" y="258" width="582" height="563" key="MultipleFileMergeDialog" timestamp="1584884835875">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2585" y="258" width="582" height="563" key="MultipleFileMergeDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584813258441" />
+    <state x="2585" y="258" width="582" height="563" key="MultipleFileMergeDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584884835875" />
     <state x="2225" y="107" key="SettingsEditor" timestamp="1584716233886">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -512,6 +516,10 @@
       <screen x="0" y="28" width="1920" height="1024" />
     </state>
     <state x="679" y="277" width="554" height="525" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.28.1920.1024@0.28.1920.1024" timestamp="1584095518315" />
+    <state x="2582" y="334" width="596" height="412" key="git4idea.merge.GitMergeDialog" timestamp="1584884923517">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2582" y="334" width="596" height="412" key="git4idea.merge.GitMergeDialog/1920.0.1920.1080/0.28.1360.740@1920.0.1920.1080" timestamp="1584884923517" />
     <state x="2413" y="334" width="926" height="412" key="git4idea.merge.GitPullDialog" timestamp="1584813145526">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

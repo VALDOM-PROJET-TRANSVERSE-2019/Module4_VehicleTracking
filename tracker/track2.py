@@ -15,35 +15,6 @@ from PIL import Image
 from tracker.objects import DetectedObject
 from tracker.objects import Vehicle
 
-def main(argv):
-    """
-    :param argv: parser
-    :return:
-    """
-    parser = argparse.ArgumentParser()
-    # Required arguments.
-    parser.add_argument(
-        "--images",
-        default="data/image/",
-        help="Input images folder.", )
-    # Optional arguments.
-    parser.add_argument(
-        "--boundingBoxes",
-        default="data/bounding_boxes/",
-        help="Bounding boxes folder", )
-    parser.add_argument(
-        "--detectionThreshold",
-        default=0.2,
-        help="Detection threshold value", )
-    parser.add_argument(
-        "--memoryFramesNumber",
-        default=10,
-        help="Detection threshold value", )
-    args = parser.parse_args()
-
-    track(args.images, args.boundingBoxes, args.detectionThreshold, args.memoryFramesNumber)
-
-
 def numerical_sort(value):
     """
     :param value:
@@ -80,7 +51,7 @@ def overlap(box1, box2):
         return ratio
 
 
-def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_number=10):
+def track(images_folder, bb_folder, detection_threshold=0.25, memory_frames_number=10):
     """
     :param images_folder: str, path to the images folder
     :param bb_folder: str, path to bounding_boxes folder
@@ -164,7 +135,6 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
                 detected_vehicles.append(Vehicle(d_o, vehicle_count))
                 vehicle_count += 1
 
-        print("Frame {}".format(i))
         for d_v in detected_vehicles:
             if d_v.visible:
                 d_v.draw(pil)
@@ -175,7 +145,3 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
 
     imageio.mimsave('output.gif', img_pil)
     optimize("output.gif")
-
-
-if __name__ == '__main__':
-    main(sys.argv)
