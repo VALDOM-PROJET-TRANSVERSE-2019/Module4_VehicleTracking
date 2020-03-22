@@ -15,7 +15,6 @@ from PIL import Image
 from tracker.objects import DetectedObject
 from tracker.objects import Vehicle
 
-
 def numerical_sort(value):
     """
     :param value:
@@ -126,7 +125,6 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
                 detected_vehicles.append(Vehicle(d_o, vehicle_count))
                 vehicle_count += 1
 
-        print("Frame {}".format(i))
         for d_v in detected_vehicles:
             if d_v.visible:
                 d_v.draw(pil)
