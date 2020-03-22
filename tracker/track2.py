@@ -159,7 +159,7 @@ def track(images_folder, bb_folder, detection_threshold=0.2, memory_frames_numbe
             if d_v.visible:
                 d_v.draw(pil)
 
-        output_data["frame " + str(i)] = [d_v.get_id() for d_v in detected_vehicles]
+        output_data["frame " + str(i)] = [d_v.get_id() for d_v in detected_vehicles if d_v.visible]
 
     return output_data
 
