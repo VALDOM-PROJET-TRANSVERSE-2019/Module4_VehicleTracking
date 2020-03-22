@@ -51,7 +51,8 @@ class TestGet(unittest.TestCase):
         test values and length of output request
         :return:
         """
-        data_file = json.load(open('data/bounding_box.json', 'r'))
+        with open('data/bounding_box.json', 'r') as file:
+            data_file = json.load(file)
         data = {'list_frame_contour': json.dumps(data_file), "frame_path": 'data/image/'}
 
         url_values = urllib.parse.urlencode(data, quote_via=urllib.parse.quote)
