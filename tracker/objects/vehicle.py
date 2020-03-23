@@ -16,7 +16,6 @@ class Vehicle:
     def __init__(self, detected_object, identifier):
         self.frame_size = detected_object.get_frame_size()
         self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
-        self.bounding_box = detected_object.get_coordinate
 
         self.__id = identifier
         self.visible = True
@@ -76,7 +75,6 @@ class Vehicle:
         self.visible = True
         self.speed = self.compute_speed(detected_object)
         self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
-        self.bounding_box = self.__x, self.__y, self.__w, self.__h
         self.center = detected_object.get_center()
         self.mean_colors = detected_object.mean_colors
         self.update_prob_position()
