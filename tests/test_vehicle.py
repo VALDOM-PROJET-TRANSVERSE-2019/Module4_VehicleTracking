@@ -37,6 +37,7 @@ class TestVehicle(unittest.TestCase):
 
         self.assertEqual(dv1_coordinates, do1_coordinates)
         self.assertEqual(dv1.get_id(), 0)
+        self.assertEqual(dv1.get_frame_size(),self.do1.get_frame_size())
         self.assertEqual(dv1.get_mean_colors(), self.do1.get_mean_colors())
         self.assertEqual(dv1.get_speed(), [0, 0])
         self.assertEqual(dv1.get_visible(), True)

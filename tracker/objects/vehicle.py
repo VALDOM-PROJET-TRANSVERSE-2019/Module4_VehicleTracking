@@ -14,7 +14,7 @@ class Vehicle:
     """
 
     def __init__(self, detected_object, identifier):
-        self.frame_size = detected_object.get_frame_size()
+        self.__frame_size = detected_object.get_frame_size()
         self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
 
         self.__id = identifier
@@ -30,13 +30,13 @@ class Vehicle:
         :return: array (x,y,w,h,r,g,b)
         """
         if self.__visible:
-            x = self.__x / self.frame_size[0]
-            y = self.__y / self.frame_size[1]
+            x = self.__x / self.__frame_size[0]
+            y = self.__y / self.__frame_size[1]
         else:
-            x = self.prob_x / self.frame_size[0]
-            y = self.prob_y / self.frame_size[1]
-        w = self.__w / self.frame_size[0]
-        h = self.__h / self.frame_size[1]
+            x = self.prob_x / self.__frame_size[0]
+            y = self.prob_y / self.__frame_size[1]
+        w = self.__w / self.__frame_size[0]
+        h = self.__h / self.__frame_size[1]
         r = self.__mean_colors[0]
         g = self.__mean_colors[1]
         b = self.__mean_colors[2]
@@ -154,3 +154,10 @@ class Vehicle:
         :return: counter (int)
         """
         return self.__counter
+
+    def get_frame_size(self):
+        """
+        Get the frame_size of the vehicle
+        :return: frame_size (tuple)
+        """
+        return self.__frame_size
