@@ -26,19 +26,6 @@ class Vehicle:
         self.mean_colors = detected_object.mean_colors
         self.counter = 0
 
-    def get_mean_color(self, frame):
-        """
-        Get mean color of the frame
-        :param frame: array, frame
-        :return:
-        """
-        frame_zone = frame[self.__y:self.__y + self.__h, self.__x:self.__x + self.__w]
-        frame_zone = np.array(frame_zone)
-        color_r = np.mean(frame_zone[:, :, 0]) / 255
-        color_g = np.mean(frame_zone[:, :, 1]) / 255
-        color_b = np.mean(frame_zone[:, :, 2]) / 255
-        self.mean_colors = (color_r, color_g, color_b)
-
     def get_feature_array(self):
         """
         Get feature vector of the vehicle
