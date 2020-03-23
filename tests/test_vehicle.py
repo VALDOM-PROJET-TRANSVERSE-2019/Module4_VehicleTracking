@@ -38,7 +38,7 @@ class TestVehicle(unittest.TestCase):
         self.assertEqual(dv1_coordinates, do1_coordinates)
         self.assertEqual(dv1.get_id(), 0)
         self.assertEqual(dv1.mean_colors, self.do1.mean_colors)
-        self.assertEqual(dv1.speed, [0, 0])
+        self.assertEqual(dv1.get_speed(), [0, 0])
         self.assertEqual(dv1.get_visible(), True)
         self.assertEqual(dv1.counter, 0)
 
@@ -87,11 +87,11 @@ class TestVehicle(unittest.TestCase):
         :return:
         """
         dv1 = Vehicle(self.do1, 0)
-        dv1.speed = [1, 15]
+        dv1.set_speed([1, 15])
         dv1.update_prob_position()
 
-        self.assertEqual(dv1.prob_x, dv1.get_x() + dv1.speed[0])
-        self.assertEqual(dv1.prob_y, dv1.get_y() + dv1.speed[1])
+        self.assertEqual(dv1.prob_x, dv1.get_x() + dv1.get_speed()[0])
+        self.assertEqual(dv1.prob_y, dv1.get_y() + dv1.get_speed()[1])
 
     def test_update_vehicle(self):
         """
@@ -104,7 +104,7 @@ class TestVehicle(unittest.TestCase):
         dv1_coordinates = dv1.get_coordinate()
         do2_coordinates = self.do2.get_coordinate()
         self.assertEqual(dv1_coordinates, do2_coordinates)
-        self.assertEqual(dv1.speed, [100, 300])
+        self.assertEqual(dv1.get_speed(), [100, 300])
 
 
 if __name__ == '__main__':

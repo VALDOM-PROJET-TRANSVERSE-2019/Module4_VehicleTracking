@@ -19,7 +19,7 @@ class Vehicle:
 
         self.__id = identifier
         self.__visible = True
-        self.speed = [0, 0]
+        self.__speed = [0, 0]
         self.update_prob_position()
         self.mean_colors = detected_object.mean_colors
         self.counter = 0
@@ -72,7 +72,7 @@ class Vehicle:
         :return:
         """
         self.__visible = True
-        self.speed = self.compute_speed(detected_object)
+        self.__speed = self.compute_speed(detected_object)
         self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
         self.mean_colors = detected_object.mean_colors
         self.update_prob_position()
@@ -90,8 +90,8 @@ class Vehicle:
         Update probable position of the vehicle
         :return:
         """
-        self.prob_x = self.__x + self.speed[0]
-        self.prob_y = self.__y + self.speed[1]
+        self.prob_x = self.__x + self.__speed[0]
+        self.prob_y = self.__y + self.__speed[1]
 
     def get_id(self):
         """
@@ -127,3 +127,16 @@ class Vehicle:
         :return: visible (bool)
         """
         return self.__visible
+
+    def get_speed(self):
+        """
+        Get the speed of the vehicle
+        :return: speed (list)
+        """
+        return self.__speed
+
+    def set_speed(self,speed):
+        """
+        Set the speed of the vehicle
+        """
+        self.__speed = speed
