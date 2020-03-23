@@ -2,6 +2,7 @@
 Testing Module for class object DetectedObject
 """
 import unittest
+
 import numpy as np
 
 from tracker.objects.detectedobject import DetectedObject
@@ -11,7 +12,6 @@ class TestDetectedObject(unittest.TestCase):
     """
     Test functions of DetectedObject
     """
-
     def setUp(self):
         self.img = np.zeros([1000, 1000, 3], dtype=np.uint8)
         self.img.fill(255)
@@ -34,10 +34,10 @@ class TestDetectedObject(unittest.TestCase):
         self.assertEqual(self.do1.get_frame_size(), (1000, 1000))
         self.assertEqual(self.do1.get_coordinates()[0], self.do1_data['left'])
         self.assertEqual(self.do1.get_coordinates()[1], self.do1_data['top'])
-        self.assertEqual(self.do1.get_coordinates()[
-                         2], self.do1_data['right'] - self.do1_data['left'])
-        self.assertEqual(self.do1.get_coordinates()[
-                         3], self.do1_data['bot'] - self.do1_data['top'])
+        self.assertEqual(self.do1.get_coordinates()[2],
+                         self.do1_data['right'] - self.do1_data['left'])
+        self.assertEqual(self.do1.get_coordinates()[3],
+                         self.do1_data['bot'] - self.do1_data['top'])
 
     def test_mean_colors(self):
         """

@@ -1,4 +1,3 @@
-# coding:utf8
 """
 Description :
 Class for the tracked vehicle.
