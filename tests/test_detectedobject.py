@@ -40,14 +40,17 @@ class TestDetectedObject(unittest.TestCase):
         Test mean color function
         :return:
         """
-        self.assertEqual(self.do1.get_mean_color(self.img), (1, 1, 1))
+        self.assertEqual(self.do1.get_mean_colors(), (1, 1, 1))
         self.img[:, :, :] = [255, 0, 0]
-        self.assertEqual(self.do1.get_mean_color(self.img), (1, 0, 0))
+        self.do1 = DetectedObject(self.do1_data, self.img)
+        self.assertEqual(self.do1.get_mean_colors(), (1, 0, 0))
         self.img[:, :, :] = [255, 255, 0]
-        self.assertEqual(self.do1.get_mean_color(self.img), (1, 1, 0))
+        self.do1 = DetectedObject(self.do1_data, self.img)
+        self.assertEqual(self.do1.get_mean_colors(), (1, 1, 0))
         self.img[:500, :, :] = [255, 127, 2]
         self.img[500:, :, :] = [0, 255, 255]
-        self.assertEqual(self.do1.get_mean_color(self.img), ((255 * 500 + 0 * 500) / 1000 / 255,
+        self.do1 = DetectedObject(self.do1_data, self.img)
+        self.assertEqual(self.do1.get_mean_colors(), ((255 * 500 + 0 * 500) / 1000 / 255,
                                                              (127 * 500 + 255 * 500) / 1000 / 255,
                                                              (2 * 500 + 255 * 500) / 1000 / 255))
 

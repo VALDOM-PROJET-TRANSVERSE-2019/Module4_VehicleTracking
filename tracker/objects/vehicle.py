@@ -21,7 +21,7 @@ class Vehicle:
         self.__visible = True
         self.__speed = [0, 0]
         self.update_prob_position()
-        self.mean_colors = detected_object.mean_colors
+        self.__mean_colors = detected_object.get_mean_colors()
         self.counter = 0
 
     def get_feature_array(self):
@@ -37,9 +37,9 @@ class Vehicle:
             y = self.prob_y / self.frame_size[1]
         w = self.__w / self.frame_size[0]
         h = self.__h / self.frame_size[1]
-        r = self.mean_colors[0]
-        g = self.mean_colors[1]
-        b = self.mean_colors[2]
+        r = self.__mean_colors[0]
+        g = self.__mean_colors[1]
+        b = self.__mean_colors[2]
         return np.array([x, y, w, h, r, g, b])
 
     def draw(self, frame):
@@ -74,7 +74,7 @@ class Vehicle:
         self.__visible = True
         self.__speed = self.compute_speed(detected_object)
         self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
-        self.mean_colors = detected_object.mean_colors
+        self.__mean_colors = detected_object.get_mean_colors()
         self.update_prob_position()
 
     def compute_speed(self, detected_object):
@@ -140,3 +140,9 @@ class Vehicle:
         Set the speed of the vehicle
         """
         self.__speed = speed
+
+    def get_mean_colors(self):
+        """
+        Get the mean_colors of the vehicle
+        """
+        return self.__mean_colors

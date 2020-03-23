@@ -18,12 +18,12 @@ class DetectedObject:
         self.__w = bounding_box['right'] - bounding_box['left']
         self.__h = bounding_box['bot'] - bounding_box['top']
 
-        self.mean_colors = self.get_mean_color(frame)
+        self.__mean_colors = self.compute_mean_colors(frame)
 
     def get_center(self):
         return [self.__x + self.__w / 2, self.__y + self.__h / 2]
 
-    def get_mean_color(self, frame):
+    def compute_mean_colors(self, frame):
         """
         Get mean color of the frame
         :param frame: array, frame
@@ -56,7 +56,7 @@ class DetectedObject:
         y = self.__y / self.__frame_size[1]
         w = self.__w / self.__frame_size[0]
         h = self.__h / self.__frame_size[1]
-        r, g, b = np.array(self.mean_colors)
+        r, g, b = np.array(self.__mean_colors)
         return np.array([x, y, w, h, r, g, b])
 
     def get_coordinate(self):
@@ -86,3 +86,10 @@ class DetectedObject:
         :return: frame size (L,H)
         """
         return self.__frame_size
+
+    def get_mean_colors(self):
+        """
+        Get the mean_colors of a DetectedObject
+        :return: mean_colors (tuple)
+        """
+        return self.__mean_colors
