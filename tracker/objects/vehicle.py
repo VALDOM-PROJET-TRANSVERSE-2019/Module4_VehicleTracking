@@ -19,7 +19,6 @@ class Vehicle:
 
         self.__id = identifier
         self.__visible = True
-        self.center = detected_object.get_center()
         self.speed = [0, 0]
         self.update_prob_position()
         self.mean_colors = detected_object.mean_colors
@@ -75,7 +74,6 @@ class Vehicle:
         self.__visible = True
         self.speed = self.compute_speed(detected_object)
         self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
-        self.center = detected_object.get_center()
         self.mean_colors = detected_object.mean_colors
         self.update_prob_position()
 
