@@ -135,7 +135,7 @@ class Vehicle:
         """
         return self.__speed
 
-    def set_speed(self,speed):
+    def set_speed(self, speed):
         """
         Set the speed of the vehicle
         """
