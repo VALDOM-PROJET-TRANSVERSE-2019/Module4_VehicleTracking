@@ -18,7 +18,7 @@ class Vehicle:
         self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
 
         self.__id = identifier
-        self.visible = True
+        self.__visible = True
         self.center = detected_object.get_center()
         self.speed = [0, 0]
         self.update_prob_position()
@@ -30,7 +30,7 @@ class Vehicle:
         Get feature vector of the vehicle
         :return: array (x,y,w,h,r,g,b)
         """
-        if self.visible:
+        if self.__visible:
             x = self.__x / self.frame_size[0]
             y = self.__y / self.frame_size[1]
         else:
@@ -61,10 +61,10 @@ class Vehicle:
         :param visible:
         :return:
         """
-        if not self.visible:
+        if not self.__visible:
             self.counter += 1
             self.update_prob_position()
-        self.visible = visible
+        self.__visible = visible
 
     def update_vehicle(self, detected_object):
         """
@@ -72,7 +72,7 @@ class Vehicle:
         :param detected_object: Object DetectedObject
         :return:
         """
-        self.visible = True
+        self.__visible = True
         self.speed = self.compute_speed(detected_object)
         self.__x, self.__y, self.__w, self.__h = detected_object.get_coordinate()
         self.center = detected_object.get_center()
@@ -122,3 +122,10 @@ class Vehicle:
         :return: y (int)
         """
         return self.__y
+
+    def get_visible(self):
+        """
+        Get visibility of the vehicle
+        :return: visible (bool)
+        """
+        return self.__visible
