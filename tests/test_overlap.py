@@ -16,11 +16,11 @@ class TestOverlap(unittest.TestCase):
     bb4 = (100 + 50, 100, 50, 100)
     bb5 = (100, 100, 50, 50)
 
-    bb6 = (10,10,1000,10)
-    bb7 = (30,30,10,10)
+    bb6 = (10, 10, 1000, 10)
+    bb7 = (30, 30, 10, 10)
 
-    bb8 = (10,10,10,1000)
-    bb9 = (30,30,10,10)
+    bb8 = (10, 10, 10, 1000)
+    bb9 = (30, 30, 10, 10)
 
     def test_bb_full_overlap(self):
         """
@@ -74,14 +74,15 @@ class TestOverlap(unittest.TestCase):
         test no overlap because of height
         :return:
         """
-        self.assertEqual(0, track2.overlap(self.bb6,self.bb7))
+        self.assertEqual(0, track2.overlap(self.bb6, self.bb7))
 
     def test_no_overlap_width(self):
         """
         test no overlap because of width
         :return:
         """
-        self.assertEqual(0, track2.overlap(self.bb8,self.bb9))
+        self.assertEqual(0, track2.overlap(self.bb8, self.bb9))
+
 
 if __name__ == '__main__':
     unittest.main()

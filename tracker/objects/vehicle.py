@@ -5,7 +5,7 @@ Class for the tracked vehicle.
 """
 
 import numpy as np
-from PIL import ImageDraw, ImageFont
+from PIL import ImageDraw
 
 
 class Vehicle:
@@ -64,7 +64,6 @@ class Vehicle:
         :return:
         """
         draw = ImageDraw.Draw(frame)
-        #font = ImageFont.truetype("FreeMono.ttf", 16)
         draw.rectangle([(self.__x, self.__y), (self.__x + self.__w, self.__y + self.__h)],
                        outline=(0, 255, 0), width=2)
         draw.text([self.__x, self.__y - 20], "Vehicle", (0, 255, 0))
