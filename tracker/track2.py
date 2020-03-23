@@ -99,7 +99,7 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
         # Reset visibility
         for d_v in detected_vehicles:
             d_v.update_counter(False)
-            if d_v.counter > memory_frames_number:
+            if d_v.get_counter() > memory_frames_number:
                 detected_vehicles.remove(d_v)
 
         # Retrieve the different objects

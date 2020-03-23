@@ -22,7 +22,7 @@ class Vehicle:
         self.__speed = [0, 0]
         self.update_prob_position()
         self.__mean_colors = detected_object.get_mean_colors()
-        self.counter = 0
+        self.__counter = 0
 
     def get_feature_array(self):
         """
@@ -61,7 +61,7 @@ class Vehicle:
         :return:
         """
         if not self.__visible:
-            self.counter += 1
+            self.__counter += 1
             self.update_prob_position()
         self.__visible = visible
 
@@ -144,5 +144,13 @@ class Vehicle:
     def get_mean_colors(self):
         """
         Get the mean_colors of the vehicle
+        :return: mean_colors (tuple)
         """
         return self.__mean_colors
+
+    def get_counter(self):
+        """
+        Get the counter of the vehicle
+        :return: counter (int)
+        """
+        return self.__counter

@@ -40,7 +40,7 @@ class TestVehicle(unittest.TestCase):
         self.assertEqual(dv1.get_mean_colors(), self.do1.get_mean_colors())
         self.assertEqual(dv1.get_speed(), [0, 0])
         self.assertEqual(dv1.get_visible(), True)
-        self.assertEqual(dv1.counter, 0)
+        self.assertEqual(dv1.get_counter(), 0)
 
     def test_get_feature_array(self):
         """
@@ -68,9 +68,9 @@ class TestVehicle(unittest.TestCase):
         dv1 = Vehicle(self.do1, 0)
 
         dv1.update_counter(False)
-        self.assertEqual(dv1.counter, 0)
+        self.assertEqual(dv1.get_counter(), 0)
         dv1.update_counter(False)
-        self.assertEqual(dv1.counter, 1)
+        self.assertEqual(dv1.get_counter(), 1)
 
     def test_compute_speed(self):
         """
