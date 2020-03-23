@@ -41,9 +41,9 @@ class TestGet(unittest.TestCase):
             for item in output[k]:
                 self.assertEqual(type(item), int)
 
-        self.assertEqual(output["frame 11"], [0])
-        self.assertEqual(output["frame 18"], [0, 1])
-        self.assertEqual(output["frame 518"], [])
+        self.assertEqual(output["frame 11"], [1])
+        self.assertEqual(output["frame 18"], [1, 3])
+        self.assertEqual(output["frame 518"], [94])
 
         self.assertNotIn("frame 519", output.keys())
         self.assertEqual(len(output), 519)
@@ -73,9 +73,9 @@ class TestGet(unittest.TestCase):
             for item in output[k]:
                 self.assertEqual(type(item), int)
 
-        self.assertEqual(output["frame 11"], [0])
-        self.assertEqual(output["frame 18"], [0, 1])
-        self.assertEqual(output["frame 518"], [])
+        self.assertEqual(output["frame 11"], [1])
+        self.assertEqual(output["frame 18"], [1, 3])
+        self.assertEqual(output["frame 518"], [94])
 
         self.assertNotIn("frame 519", output.keys())
         self.assertEqual(len(output), 519)
