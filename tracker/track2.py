@@ -112,7 +112,7 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
         for do_1 in detected_objects:
             for do_2 in detected_objects:
                 if do_1 != do_2:
-                    if overlap(do_1.get_coordinate(), do_2.get_coordinate()) > 0.6:
+                    if overlap(do_1.get_coordinates(), do_2.get_coordinates()) > 0.6:
                         detected_objects.remove(do_2)
 
         potential_vehicles_indexes = [i for i in range(len(detected_vehicles))]
@@ -133,17 +133,19 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
                     found = True
                     vehicle_index = potential_vehicles_indexes[shortest_distance_index]
                     detected_vehicles[vehicle_index].update_vehicle(d_o)
-                    potential_vehicles_indexes.remove(potential_vehicles_indexes[shortest_distance_index])
+                    potential_vehicles_indexes.remove(
+                        potential_vehicles_indexes[shortest_distance_index])
 
             if not found:
-                detected_vehicles.append(Vehicle(d_o, vehicle_count))
+                detected_vehicles.append(Vehicle(d_o, img, vehicle_count))
                 vehicle_count += 1
 
         for d_v in detected_vehicles:
             if d_v.get_visible():
                 d_v.draw(pil)
 
-        output_data["frame " + str(i)] = [d_v.get_id() for d_v in detected_vehicles if d_v.get_visible()]
+        output_data["frame " + str(i)] = [d_v.get_id()
+                                          for d_v in detected_vehicles if d_v.get_visible()]
 
     return output_data
 
