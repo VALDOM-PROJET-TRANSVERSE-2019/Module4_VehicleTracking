@@ -94,8 +94,8 @@ class TestVehicle(unittest.TestCase):
         dv1.set_speed([1, 15])
         dv1.update_prob_position()
 
-        self.assertEqual(dv1.prob_x, dv1.get_x() + dv1.get_speed()[0])
-        self.assertEqual(dv1.prob_y, dv1.get_y() + dv1.get_speed()[1])
+        self.assertEqual(dv1.get_prob_x(), dv1.get_x() + dv1.get_speed()[0])
+        self.assertEqual(dv1.get_prob_y(), dv1.get_y() + dv1.get_speed()[1])
 
     def test_update_vehicle(self):
         """

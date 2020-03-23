@@ -127,3 +127,17 @@ class Vehicle(DetectedObject):
         :return: counter (int)
         """
         return self.__counter
+
+    def get_prob_x(self):
+        """
+        Get the prob_x
+        :return: prob_x (int)
+        """
+        return self.__prob_x
+
+    def get_prob_y(self):
+        """
+        Get the prob_y
+        :return: prob_y (int)
+        """
+        return self.__prob_y
