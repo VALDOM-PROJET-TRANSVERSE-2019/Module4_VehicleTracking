@@ -9,6 +9,9 @@ from urllib.error import HTTPError
 
 
 class TestGet(unittest.TestCase):
+    """
+    Test functions of request to flask server
+    """
 
     def setUp(self):
         self.data = {'list_frame_contour': 'data/bounding_box.json', "frame_path": 'data/image/'}

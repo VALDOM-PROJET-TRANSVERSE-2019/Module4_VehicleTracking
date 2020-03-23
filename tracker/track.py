@@ -8,8 +8,9 @@ from os.path import isfile, join
 
 import imageio
 import numpy as np
-from pygifsicle import optimize
 from PIL import Image
+from pygifsicle import optimize
+
 from tracker.objects import DetectedObject
 from tracker.objects import Vehicle
 

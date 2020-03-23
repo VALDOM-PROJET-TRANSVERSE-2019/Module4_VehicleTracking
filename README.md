@@ -3,7 +3,7 @@ This repository is part of the ‘projet transverse’ of the [Advanced Master V
 
 This year (2019/2020) the goal of the project is to develop a video analysis service. The main functionality is the recognition and tracking of vehicles in order to be able to estimate the emission rate (Co2) produced by traffic in the areas concerned.
 
-# Module4: Suividesvéhicules
+# Module4: Suivi des véhicules
 1. Objectif du module
 
 Ce module permet de faire le lien entre les mêmes véhicules présents sur différentes images. Un identifiant est généré pour chaque véhicule et lui sera attribué de la première image liée à son apparition jusqu’à la dernière image liée à sa disparition.
@@ -12,9 +12,12 @@ Ce module permet de faire le lien entre les mêmes véhicules présents sur diff
 
 Le module va chercher aux chemins désignés:
 * un ensemble d'images.
-* les détections de véhicules associées à ces images.
+* les détections de véhicules associées à ces images (chemin vers JSON, dict python, ou chemin vers un document de MongoDB).
 
-//todo explication tracker
+Pour chaque image le tracker récupère les bounding_box associées dans le json. 
+Des DetectedObject sont générés pour chaques bounding_box, leur position/couleur sont comparés avec la liste de véhicule déjà détectés. 
+Si un nouvel objet est trop différent de tous les véhicules déjà détectés, alors il est considéré comme étant nouveau et reçoit un nouvelle ID. 
+Sinon il prend l'ID du véhicule dont il est le plus similaire.
 
 3. API du module
 
@@ -47,5 +50,3 @@ python run.py
 
 Des requètes peuvent être envoyées au module via son addresse par défaut localhost:5000.
 
-5. Fonctionnement du tracker
-Pour chaque image le tracker récupère les bounding_box associées dans le json. Des DetectedObject sont générés pour chaques bounding_box, leur position/couleur sont comparés avec la liste de véhicule déjà détectés. Si un nouvel objet est trop différent de tous les véhicules déjà détectés, alors il est considéré comme étant nouveau et reçoit un nouvelle ID. Sinon il prend l'ID du véhicule dont il est le plus similaire.

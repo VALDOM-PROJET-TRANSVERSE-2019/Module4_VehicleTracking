@@ -1,4 +1,3 @@
-# coding:utf8
 """
 Description :
 Class for the tracked vehicle.
@@ -6,6 +5,7 @@ Class for the tracked vehicle.
 
 import numpy as np
 from PIL import ImageDraw
+
 from tracker.objects import DetectedObject
 
 
@@ -48,11 +48,12 @@ class Vehicle(DetectedObject):
         :return:
         """
         draw = ImageDraw.Draw(frame)
-        draw.rectangle([(self.get_x(), self.get_y()), (self.get_x() + self.get_w(), self.get_y() + self.get_h())],
+        draw.rectangle([(self.get_x(), self.get_y()),
+                        (self.get_x() + self.get_w(),
+                         self.get_y() + self.get_h())],
                        outline=(0, 255, 0), width=2)
         draw.text([self.get_x(), self.get_y() - 20], "Vehicle", (0, 255, 0))
-        draw.text([self.get_x(), self.get_y() - 40],
-                  str(self.__id), (0, 255, 0))
+        draw.text([self.get_x(), self.get_y() - 40], str(self.__id), (0, 255, 0))
 
     def update_counter(self, visible):
         """

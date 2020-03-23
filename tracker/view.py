@@ -6,7 +6,7 @@ from flask import Flask
 from flask_restplus import Api, Resource, reqparse
 from pymongo import MongoClient
 
-from tracker import track2
+from tracker import track
 
 APP = Flask(__name__)
 APP.config.from_object('config')
@@ -37,7 +37,7 @@ class TrackerFromJson(Resource):
                             default=0.2)
         args = parser.parse_args()
 
-        output = track2.track(args.frame_path, args.list_frame_contour, args.distance_threshold)
+        output = track.track(args.frame_path, args.list_frame_contour, args.distance_threshold)
         return output
 
 
@@ -72,10 +72,10 @@ class TrackerFromJson(Resource):
                             help='Distance at which a new detectedObject will not be associated with a Vehicle',
                             default=0.2)
         args = parser.parse_args()
-        Data_base = args.MongoDB_DataBase
+        data_base = args.MongoDB_DataBase
         collection = args.MongoDB_Collection
         client = MongoClient(args.MongoDB_Address)
-        json = client.Data_base[collection].find_one({"_id": ObjectId(args.MongoDB_Document)})
+        json = client.data_base[collection].find_one({"_id": ObjectId(args.MongoDB_Document)})
         del json['_id']
-        output = track2.track(args.frame_path, json, args.distance_threshold)
+        output = track.track(args.frame_path, json, args.distance_threshold)
         return output
