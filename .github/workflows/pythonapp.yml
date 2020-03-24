@@ -34,6 +34,7 @@ jobs:
     - name: Start flask server
       run: |
         python run.py&
+        bash run.sh&
     - name: Test with unittest
       run: |
         python -m unittest -v
