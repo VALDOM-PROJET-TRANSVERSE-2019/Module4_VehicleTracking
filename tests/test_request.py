@@ -54,7 +54,7 @@ class TestGet(unittest.TestCase):
         test values and length of output request
         :return:
         """
-        with open('data/bounding_box_short.json', 'r') as file:
+        with open('data/bounding_box.json', 'r') as file:
             data_file = json.load(file)
         json_data = json.dumps(data_file)
         data = {'list_frame_contour': json_data, "frame_path": 'data/image/'}
@@ -76,6 +76,10 @@ class TestGet(unittest.TestCase):
 
         self.assertEqual(output["frame 11"], [0])
         self.assertEqual(output["frame 18"], [0, 1])
+        self.assertEqual(output["frame 518"], [])
+
+        self.assertNotIn("frame 519", output.keys())
+        self.assertEqual(len(output), 519)
 
     def test_error_bb_missing(self):
         """
