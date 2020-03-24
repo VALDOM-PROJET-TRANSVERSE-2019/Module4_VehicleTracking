@@ -73,6 +73,7 @@ class TestVehicle(unittest.TestCase):
 
         dv1.update_counter(False)
         self.assertEqual(dv1.get_counter(), 0)
+        dv1.update_visibility()
         dv1.update_counter(False)
         self.assertEqual(dv1.get_counter(), 1)
 
@@ -82,8 +83,19 @@ class TestVehicle(unittest.TestCase):
         :return:
         """
         dv1 = Vehicle(self.do1, self.img, 0)
-        self.assertEqual(dv1.compute_speed(self.do1), [0, 0])
-        self.assertEqual(dv1.compute_speed(self.do2), [100, 300])
+        self.assertEqual(dv1.compute_speed(), [0, 0])
+
+        do2_data = {"object": "truck", "proba": 87,
+            "left": 10, "bot": 1000, "right": 100, "top": 10}
+        do2 = DetectedObject(do2_data, self.img)
+        dv1.update_vehicle(do2)
+        self.assertEqual(dv1.compute_speed(), [10, 10])
+
+        do2_data = {"object": "truck", "proba": 87,
+            "left": 30, "bot": 1000, "right": 100, "top": 30}
+        do2 = DetectedObject(do2_data, self.img)
+        dv1.update_vehicle(do2)
+        self.assertEqual(dv1.compute_speed(), [15, 15])
 
     def test_update_prob_position(self):
         """
