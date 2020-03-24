@@ -90,7 +90,6 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
         except TypeError:
             data_file = bb_folder
         for content in data_file.values():
-            print(type(content))
             bb_array.append(content)
 
     detected_vehicles = []
@@ -104,7 +103,6 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
                 detected_vehicles.remove(d_v)
 
         # Retrieve the different objects
-        print(type(bbs))
         for obj in bbs:
             if obj['object'] == 'car' or obj['object'] == 'truck':
                 detected_objects.append(DetectedObject(obj, img))

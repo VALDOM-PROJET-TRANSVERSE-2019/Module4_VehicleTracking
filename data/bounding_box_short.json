@@ -1,0 +1,198 @@
+{
+    "image0": [],
+    "image1": [
+        {
+            "object": "train",
+            "proba": 54,
+            "left": 0,
+            "bot": 351,
+            "right": 479,
+            "top": 4
+        }
+    ],
+    "image2": [],
+    "image3": [],
+    "image4": [
+        {
+            "object": "train",
+            "proba": 51,
+            "left": 0,
+            "bot": 347,
+            "right": 479,
+            "top": 8
+        }
+    ],
+    "image5": [],
+    "image6": [
+        {
+            "object": "car",
+            "proba": 57,
+            "left": 0,
+            "bot": 196,
+            "right": 81,
+            "top": 113
+        }
+    ],
+    "image7": [
+        {
+            "object": "truck",
+            "proba": 59,
+            "left": 2,
+            "bot": 193,
+            "right": 109,
+            "top": 120
+        }
+    ],
+    "image8": [
+        {
+            "object": "truck",
+            "proba": 86,
+            "left": 0,
+            "bot": 194,
+            "right": 134,
+            "top": 121
+        }
+    ],
+    "image9": [
+        {
+            "object": "truck",
+            "proba": 88,
+            "left": 21,
+            "bot": 196,
+            "right": 165,
+            "top": 125
+        }
+    ],
+    "image10": [
+        {
+            "object": "truck",
+            "proba": 87,
+            "left": 40,
+            "bot": 196,
+            "right": 184,
+            "top": 127
+        }
+    ],
+    "image11": [
+        {
+            "object": "truck",
+            "proba": 98,
+            "left": 73,
+            "bot": 199,
+            "right": 215,
+            "top": 128
+        }
+    ],
+    "image12": [
+        {
+            "object": "truck",
+            "proba": 96,
+            "left": 89,
+            "bot": 201,
+            "right": 222,
+            "top": 128
+        }
+    ],
+    "image13": [
+        {
+            "object": "truck",
+            "proba": 97,
+            "left": 124,
+            "bot": 200,
+            "right": 265,
+            "top": 129
+        }
+    ],
+    "image14": [
+        {
+            "object": "truck",
+            "proba": 93,
+            "left": 132,
+            "bot": 201,
+            "right": 277,
+            "top": 129
+        }
+    ],
+    "image15": [
+        {
+            "object": "bird",
+            "proba": 50,
+            "left": 7,
+            "bot": 140,
+            "right": 58,
+            "top": 102
+        },
+        {
+            "object": "truck",
+            "proba": 59,
+            "left": 154,
+            "bot": 199,
+            "right": 310,
+            "top": 128
+        }
+    ],
+    "image16": [
+        {
+            "object": "truck",
+            "proba": 54,
+            "left": 182,
+            "bot": 206,
+            "right": 326,
+            "top": 134
+        }
+    ],
+    "image17": [
+        {
+            "object": "truck",
+            "proba": 50,
+            "left": 217,
+            "bot": 207,
+            "right": 351,
+            "top": 134
+        },
+        {
+            "object": "car",
+            "proba": 78,
+            "left": 0,
+            "bot": 285,
+            "right": 54,
+            "top": 216
+        }
+    ],
+    "image18": [
+        {
+            "object": "truck",
+            "proba": 64,
+            "left": 232,
+            "bot": 208,
+            "right": 369,
+            "top": 133
+        },
+        {
+            "object": "car",
+            "proba": 97,
+            "left": 0,
+            "bot": 285,
+            "right": 76,
+            "top": 214
+        }
+    ],
+    "image19": [
+        {
+            "object": "truck",
+            "proba": 84,
+            "left": 263,
+            "bot": 207,
+            "right": 400,
+            "top": 133
+        },
+        {
+            "object": "car",
+            "proba": 91,
+            "left": 4,
+            "bot": 288,
+            "right": 110,
+            "top": 213
+        }
+    ]
+}
