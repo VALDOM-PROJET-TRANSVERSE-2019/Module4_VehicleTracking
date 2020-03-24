@@ -5,4 +5,4 @@ FROM python:3.8-slim
 COPY . /Module4_VehicleTracking
 WORKDIR /Module4_VehicleTracking
 RUN pip install -r requirements.txt
-CMD ["python", "run.py"]
+CMD ["bash", "run.sh"]
