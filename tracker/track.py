@@ -90,7 +90,6 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
         except TypeError:
             data_file = bb_folder
         for content in data_file.values():
-            print(type(content))
             bb_array.append(content)
 
     detected_vehicles = []
@@ -104,10 +103,8 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
                 detected_vehicles.remove(d_v)
 
         # Retrieve the different objects
-        print(type(bbs))
         for obj in bbs:
-            if obj['object'] == 'car' or obj['object'] == 'truck':
-                detected_objects.append(DetectedObject(obj, img))
+            detected_objects.append(DetectedObject(obj, img))
 
         # Delete overlaps
         for do_1 in detected_objects:
@@ -142,8 +139,12 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
                 vehicle_count += 1
 
         for d_v in detected_vehicles:
+            d_v.update_visibility()
+        for d_v in detected_vehicles:
             if d_v.get_visible():
                 d_v.draw(pil)
+            else:
+                d_v.draw_prob(pil)
 
         output_data["frame " + str(i)] = [d_v.get_id()
                                           for d_v in detected_vehicles if d_v.get_visible()]

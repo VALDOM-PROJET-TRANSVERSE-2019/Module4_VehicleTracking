@@ -42,7 +42,7 @@ class TrackerFromJson(Resource):
 
 
 @TRACKMONGOBD.route('/')
-class TrackerFromJson(Resource):
+class TrackerFromMongodb(Resource):
     """
     Resource class to generate Swagger for REST API
     """
