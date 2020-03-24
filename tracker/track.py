@@ -104,8 +104,7 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
 
         # Retrieve the different objects
         for obj in bbs:
-            if obj['object'] == 'car' or obj['object'] == 'truck':
-                detected_objects.append(DetectedObject(obj, img))
+            detected_objects.append(DetectedObject(obj, img))
 
         # Delete overlaps
         for do_1 in detected_objects:
