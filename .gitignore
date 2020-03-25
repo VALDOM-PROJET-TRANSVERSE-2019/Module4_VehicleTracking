@@ -28,7 +28,9 @@ share/python-wheels/
 .installed.cfg
 *.egg
 ./idea
+.idea/
 ./vscode
+**/.vscode/
 MANIFEST
 
 # PyInstaller
