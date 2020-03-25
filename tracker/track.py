@@ -25,32 +25,6 @@ def numerical_sort(value):
     parts[1::2] = map(int, parts[1::2])
     return parts
 
-
-def overlap(box1, box2):
-    """
-    Check the overlap of two boxes
-    :param box1: (x,y,w,h) : (float, float, float, float)
-    :param box2: (x,y,w,h) : (float, float, float, float)
-    :return: 0 or overlap ratio between box1 and box2
-    """
-    end_x = max(box1[0] + box1[2], box2[0] + box2[2])
-    start_x = min(box1[0], box2[0])
-    width = box1[2] + box2[2] - (end_x - start_x)
-
-    end_y = max(box1[1] + box1[3], box2[1] + box2[3])
-    start_y = min(box1[1], box2[1])
-    height = box1[3] + box2[3] - (end_y - start_y)
-
-    if width <= 0 or height <= 0:
-        return 0
-    else:
-        area = width * height
-        area1 = box1[2] * box1[3]
-        area2 = box2[2] * box2[3]
-        ratio = area / (area1 + area2 - area)
-        return ratio
-
-
 def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10):
     """
     :param images_folder: str, path to the images folder
@@ -105,13 +79,6 @@ def track(images_folder, bb_folder, detection_threshold, memory_frames_number=10
         # Retrieve the different objects
         for obj in bbs:
             detected_objects.append(DetectedObject(obj, img))
-
-        # Delete overlaps
-        for do_1 in detected_objects:
-            for do_2 in detected_objects:
-                if do_1 != do_2:
-                    if overlap(do_1.get_coordinates(), do_2.get_coordinates()) > 0.6:
-                        detected_objects.remove(do_2)
 
         potential_vehicles_indexes = [i for i in range(len(detected_vehicles))]
 

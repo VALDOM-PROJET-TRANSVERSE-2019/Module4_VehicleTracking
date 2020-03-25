@@ -43,7 +43,7 @@ class TestGet(unittest.TestCase):
 
         self.assertEqual(output["frame 11"], [1])
         self.assertEqual(output["frame 18"], [1, 3])
-        self.assertEqual(output["frame 518"], [90])
+        self.assertEqual(output["frame 518"], [101])
 
         self.assertNotIn("frame 519", output.keys())
         self.assertEqual(len(output), 519)
@@ -76,7 +76,7 @@ class TestGet(unittest.TestCase):
 
         self.assertEqual(output["frame 11"], [1])
         self.assertEqual(output["frame 18"], [1, 3])
-        self.assertEqual(output["frame 518"], [90])
+        self.assertEqual(output["frame 518"], [101])
 
         self.assertNotIn("frame 519", output.keys())
         self.assertEqual(len(output), 519)
