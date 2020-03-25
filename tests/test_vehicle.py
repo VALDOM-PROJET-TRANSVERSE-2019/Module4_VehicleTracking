@@ -86,13 +86,13 @@ class TestVehicle(unittest.TestCase):
         self.assertEqual(dv1.compute_speed(), [0, 0])
 
         do2_data = {"object": "truck", "proba": 87,
-            "left": 10, "bot": 1000, "right": 100, "top": 10}
+                    "left": 10, "bot": 1000, "right": 100, "top": 10}
         do2 = DetectedObject(do2_data, self.img)
         dv1.update_vehicle(do2)
         self.assertEqual(dv1.compute_speed(), [10, 10])
 
         do2_data = {"object": "truck", "proba": 87,
-            "left": 30, "bot": 1000, "right": 100, "top": 30}
+                    "left": 30, "bot": 1000, "right": 100, "top": 30}
         do2 = DetectedObject(do2_data, self.img)
         dv1.update_vehicle(do2)
         self.assertEqual(dv1.compute_speed(), [15, 15])

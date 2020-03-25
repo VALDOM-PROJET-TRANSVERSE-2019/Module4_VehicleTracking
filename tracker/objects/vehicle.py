@@ -7,7 +7,7 @@ import numpy as np
 from PIL import ImageDraw
 
 from tracker.objects import DetectedObject
-from statistics import mean
+
 
 class Vehicle(DetectedObject):
     """
@@ -93,8 +93,8 @@ class Vehicle(DetectedObject):
         self.set_coordinates(x, y, w, h)
         self.__mean_colors = detected_object.get_mean_colors()
 
-        self.previous_pos.append([x,y])
-        if(len(self.previous_pos)>10):
+        self.previous_pos.append([x, y])
+        if len(self.previous_pos) > 10:
             self.previous_pos.pop(0)
 
         self.__speed = self.compute_speed()
@@ -112,11 +112,11 @@ class Vehicle(DetectedObject):
         :return: list, (Vx,Vy)
         """
         pos = self.previous_pos
-        if(len(pos) >= 2):
+        if len(pos) >= 2:
             speeds = []
-            for i in range(1,len(pos),1):
-                speeds.append(np.array(pos[i]) - np.array(pos[i-1]))
-            return list(np.mean(speeds,axis=0)/(self.__counter + 1)) 
+            for i in range(1, len(pos), 1):
+                speeds.append(np.array(pos[i]) - np.array(pos[i - 1]))
+            return list(np.mean(speeds, axis=0) / (self.__counter + 1))
         else:
             return [0, 0]
 
