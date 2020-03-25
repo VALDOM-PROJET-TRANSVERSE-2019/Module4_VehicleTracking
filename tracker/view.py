@@ -1,6 +1,9 @@
 """
 Routes for Flask app
 """
+import json
+from os import listdir
+
 from bson import ObjectId
 from flask import Flask, abort
 from flask_restplus import Api, Resource, reqparse
@@ -22,7 +25,7 @@ class TrackerFromJson(Resource):
     Resource class to generate Swagger for REST API
     """
 
-    @TRACKJSON.doc(params={'list_frame_contour': 'A path', "frame_path": 'A path',
+    @TRACKJSON.doc(params={'list_frame_contour': 'A path', "frame_path": 'A path to a json',
                            'distance_threshold': 'A float'})
     def get(self):
         """
@@ -38,6 +41,18 @@ class TrackerFromJson(Resource):
                             help='Distance at which a new detectedObject will not be associated with a Vehicle',
                             default=0.2)
         args = parser.parse_args()
+        try:
+            with open(args.list_frame_contour):
+                pass
+        except FileNotFoundError:
+            abort(400, "Please enter a valid json path")
+        except OSError:
+            pass
+
+        try:
+            listdir(args.frame_path)
+        except FileNotFoundError:
+            abort(400, "Please enter a image folder")
 
         output = track.track(args.frame_path, args.list_frame_contour, args.distance_threshold)
         return output
